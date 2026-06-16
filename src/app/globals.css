@@ -6,8 +6,12 @@ html {
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #111827;
+  --foreground: #F9FAFB;
+  --card: #1F2937;
+  --text-secondary: #9CA3AF;
+  --accent: #6BB8D4;
+  --accent-gold: #D4A853;
 }
 
 @theme inline {
@@ -17,13 +21,10 @@ html {
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-accent-gold: var(--accent-gold);
 }
 
 body {
