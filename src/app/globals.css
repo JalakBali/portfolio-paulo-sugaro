@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -10,6 +15,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
 @media (prefers-color-scheme: dark) {
