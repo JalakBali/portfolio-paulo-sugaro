@@ -38,6 +38,8 @@ export default function Navbar() {
             alt="Paulo Sugaro"
             width={140}
             height={40}
+            preload
+            style={{ height: "auto" }}
           />
         </Link>
 

@@ -105,6 +105,7 @@ export default function Hero() {
               width={480}
               height={600}
               preload
+              loading="eager"
               className="relative z-10 h-auto w-72 rounded-2xl object-cover object-top shadow-2xl ring-1 ring-white/10 sm:w-80 md:w-96"
             />
           </div>
