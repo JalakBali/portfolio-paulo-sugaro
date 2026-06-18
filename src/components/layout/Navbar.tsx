@@ -27,7 +27,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 h-16 transition-colors duration-300 ${
         isScrolled
-          ? "bg-white/70 backdrop-blur-md border-b border-black/10"
+          ? "bg-[#111827]/95 backdrop-blur-md border-b border-gray-800"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -66,14 +66,14 @@ export default function Navbar() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((open) => !open)}
-          className="md:hidden text-neutral-800"
+          className="md:hidden text-gray-300 hover:text-white"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-white/90 backdrop-blur-md border-b border-black/10">
+        <div className="md:hidden bg-[#111827]/95 backdrop-blur-md border-b border-gray-800">
           <ul className="flex flex-col gap-4 px-4 py-6">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
