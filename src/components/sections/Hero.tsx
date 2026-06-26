@@ -71,14 +71,14 @@ export default function Hero() {
 
           <motion.div
             variants={fadeInLeft}
-            className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start"
+            className="mt-8 flex items-center justify-center md:justify-start"
           >
-            <Link
+            {/* <Link
               href="#projects"
               className="border-2 border-[#6BB8D4] text-[#6BB8D4] hover:bg-[#6BB8D4] hover:text-white transition-colors duration-300 rounded-full px-6 py-3"
             >
               View My Work
-            </Link>
+            </Link> */}
             <Link
               href="#contact"
               className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
