@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import ProblemsWeSolve from "@/components/sections/ProblemsWeSolve";
 import Solutions from "@/components/sections/Solutions";
 import WhyWorkWithMe from "@/components/sections/WhyWorkWithMe";
 import About from "@/components/sections/About";
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
+      <ProblemsWeSolve />
       <Solutions />
       <WhyWorkWithMe />
       <About />

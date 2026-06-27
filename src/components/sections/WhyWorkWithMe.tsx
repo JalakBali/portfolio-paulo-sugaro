@@ -6,23 +6,26 @@ import { Briefcase, Layers, Rocket, MessageSquare } from "lucide-react";
 const reasons = [
   {
     icon: Briefcase,
-    title: "Business-First Approach",
-    description: "I focus on your workflow and business process before writing code.",
+    title: "Understand Your Business",
+    description: "Before writing code, we learn how your business actually works.",
   },
   {
     icon: Layers,
-    title: "Custom-Built Solutions",
-    description: "No generic templates. Software is designed around your needs.",
+    title: "Design Around Your Workflow",
+    description:
+      "Every system is tailored to support your existing operations—not replace them.",
   },
   {
     icon: Rocket,
-    title: "Modern & Scalable Stack",
-    description: "Built with modern technologies suitable for long-term growth.",
+    title: "Build With Modern Technology",
+    description:
+      "Reliable, scalable, and maintainable software built for long-term growth.",
   },
   {
     icon: MessageSquare,
-    title: "Practical Support",
-    description: "Clear communication, practical solutions, and ongoing improvement.",
+    title: "Continuous Improvement",
+    description:
+      "Software evolves with your business through ongoing refinement and support.",
   },
 ];
 
@@ -43,7 +46,7 @@ const cardVariants: Variants = {
 
 export default function WhyWorkWithMe() {
   return (
-    <section id="why" className="py-24">
+    <section id="approach" className="py-24">
       <div className="mx-auto max-w-6xl px-4">
         <motion.div
           className="mb-12 text-center"
@@ -53,11 +56,18 @@ export default function WhyWorkWithMe() {
           variants={headingVariants}
         >
           <span className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]">
-            Why Us
+            Our Approach
           </span>
           <h2 className="mt-2 font-heading text-3xl font-bold text-white md:text-4xl">
-            Why Work With Me
+            The Paulo Sugaro Approach
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-gray-400">
+            Great software starts long before development.
+            <br className="hidden sm:block" />
+            Every successful project begins by understanding how your business
+            works, identifying bottlenecks, and designing a solution that fits
+            your workflow—not forcing your workflow to fit the software.
+          </p>
         </motion.div>
 
         <motion.div
