@@ -25,9 +25,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Paulo Sugaro — Seamless Technology Solutions",
+  title: "Paulo Sugaro — Custom Software & Business Automation",
   description:
-    "Web developer based in Bali, Indonesia. Building fast, modern websites for local businesses and beyond.",
+    "Custom software, business automation, internal systems, and web applications for growing businesses in Bali and beyond.",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },

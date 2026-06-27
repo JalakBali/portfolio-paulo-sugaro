@@ -53,37 +53,43 @@ export default function Hero() {
         >
           <motion.h1
             variants={fadeInLeft}
-            className="font-heading text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl"
+            className="font-heading text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl"
           >
-            Turning Business Challenges into Seamless Digital Solutions
+            Custom Software.{" "}
+            <span className="text-[#6BB8D4]">Real Business Impact.</span>
           </motion.h1>
 
           <motion.p
             variants={fadeInLeft}
             className="mx-auto mt-6 max-w-xl text-base text-gray-300 md:mx-0 md:text-lg"
           >
-            I&rsquo;m Paul, a software developer based in Bali, Indonesia. I
-            help businesses streamline their operations and grow their
-            presence online — from professional websites to custom internal
-            systems. Whether you&rsquo;re a local business or an
-            international brand, I build solutions that just work.
+            We design and build custom software that streamlines operations,
+            automates workflows, and helps businesses grow &mdash; from internal
+            business systems to modern web applications.
+          </motion.p>
+
+          <motion.p
+            variants={fadeInLeft}
+            className="mx-auto mt-3 max-w-xl text-sm text-[#6BB8D4]/80 md:mx-0"
+          >
+            Based in Bali. Working with businesses locally and internationally.
           </motion.p>
 
           <motion.div
             variants={fadeInLeft}
-            className="mt-8 flex items-center justify-center md:justify-start"
+            className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:justify-start"
           >
-            {/* <Link
-              href="#projects"
-              className="border-2 border-[#6BB8D4] text-[#6BB8D4] hover:bg-[#6BB8D4] hover:text-white transition-colors duration-300 rounded-full px-6 py-3"
-            >
-              View My Work
-            </Link> */}
             <Link
               href="#contact"
-              className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="rounded-full bg-[#6BB8D4] px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              Get In Touch
+              Discuss Your Project
+            </Link>
+            <Link
+              href="#solutions"
+              className="rounded-full border-2 border-[#6BB8D4]/60 px-7 py-3 text-sm font-medium text-[#6BB8D4] transition-colors hover:border-[#6BB8D4] hover:bg-[#6BB8D4]/10"
+            >
+              View Services
             </Link>
           </motion.div>
         </motion.div>

@@ -87,28 +87,27 @@ export default function About() {
           </motion.h2>
 
           <motion.p variants={fadeUp} className="leading-relaxed text-gray-300">
-            I&rsquo;m Paul, a software developer based in Bali, Indonesia. With
-            a background in Physics and years of experience in IT, I&rsquo;ve
-            grown from hands-on IT support and operational systems into building
-            modern accounting applications and web solutions for real businesses.
+            I&rsquo;m Paul, a software developer based in Bali, Indonesia. My
+            journey started from solving real operational problems &mdash;
+            building accounting systems, internal workflows, and business tools
+            using Google Sheets and Google Apps Script.
           </motion.p>
 
           <motion.p variants={fadeUp} className="leading-relaxed text-gray-300">
-            Over the past two years, I&rsquo;ve focused on developing custom
-            accounting systems and business applications using React, Vite, and
-            Supabase &mdash; serving clients in the restaurant, hospitality, and
-            lifestyle industries. I&rsquo;m now expanding into modern web
-            development with Next.js and Tailwind CSS.
+            Today, I build modern software with React, Next.js, Supabase, and
+            Cloudflare, helping businesses move from manual processes into
+            reliable digital systems.
           </motion.p>
 
           <motion.p variants={fadeUp} className="leading-relaxed text-gray-300">
-            I take on freelance projects outside office hours &mdash; from
-            professional websites to custom internal systems. If you have a
-            project in mind, I&rsquo;d love to hear about it.
+            My approach is simple: understand the workflow first, then build
+            software that fits the way the business actually works.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            {/* Availability badge */}
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col gap-4 sm:flex-row sm:items-center"
+          >
             <span className="inline-flex items-center gap-2 rounded-full bg-green-900/50 px-4 py-1.5 text-sm font-medium text-green-400">
               <span
                 aria-hidden="true"
@@ -117,12 +116,11 @@ export default function About() {
               Available for New Projects
             </span>
 
-            {/* CTA button */}
             <a
               href="#contact"
               className="inline-block rounded-full bg-[#6BB8D4] px-6 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              Get In Touch
+              Discuss Your Project
             </a>
           </motion.div>
         </motion.div>

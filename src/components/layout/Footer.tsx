@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-[#0D1117] py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4">
         <p className="text-sm font-medium uppercase tracking-widest text-[#6BB8D4]">
-          Seamless Technology Solutions
+          Custom Software. Real Business Impact.
         </p>
 
         <a

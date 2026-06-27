@@ -51,15 +51,16 @@ export default function Contact() {
             variants={fadeDown}
             className="font-heading text-3xl font-bold text-white md:text-4xl lg:text-5xl"
           >
-            Let&rsquo;s Work Together
+            Let&rsquo;s Build a Better System for Your Business
           </motion.h2>
 
           <motion.p
             variants={fadeDown}
             className="mx-auto max-w-lg text-gray-300"
           >
-            Have a project in mind? I&rsquo;d love to hear about it. Reach out
-            via WhatsApp or Email and let&rsquo;s make it happen.
+            Have a business process that feels too manual, messy, or difficult
+            to manage? Let&rsquo;s discuss how custom software or automation can
+            help.
           </motion.p>
         </motion.div>
 

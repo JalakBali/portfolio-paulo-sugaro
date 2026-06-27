@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
-  { label: "Projects", href: "#projects" },
+  { label: "Services", href: "#solutions" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -60,7 +60,7 @@ export default function Navbar() {
           href="#contact"
           className="hidden md:inline-block rounded-full bg-[#6BB8D4] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5aa6c2]"
         >
-          Get In Touch
+          Discuss Your Project
         </Link>
 
         <button
@@ -94,7 +94,7 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
                 className="inline-block rounded-full bg-[#6BB8D4] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5aa6c2]"
               >
-                Get In Touch
+                Discuss Your Project
               </Link>
             </li>
           </ul>
