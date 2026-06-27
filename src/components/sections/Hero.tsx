@@ -51,21 +51,28 @@ export default function Hero() {
           animate="visible"
           className="order-2 text-center md:order-1 md:text-left"
         >
+          <motion.span
+            variants={fadeInLeft}
+            className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]"
+          >
+            Custom Software &amp; Business Automation
+          </motion.span>
+
           <motion.h1
             variants={fadeInLeft}
-            className="font-heading text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl"
+            className="mt-3 font-heading text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl"
           >
-            Custom Software.{" "}
-            <span className="text-[#6BB8D4]">Real Business Impact.</span>
+            Software That Fits
+            <br className="hidden sm:block" />{" "}
+            <span className="text-[#6BB8D4]">Your Business.</span>
           </motion.h1>
 
           <motion.p
             variants={fadeInLeft}
             className="mx-auto mt-6 max-w-xl text-base text-gray-300 md:mx-0 md:text-lg"
           >
-            We design and build custom software that streamlines operations,
-            automates workflows, and helps businesses grow &mdash; from internal
-            business systems to modern web applications.
+            We build software that adapts to your business—not the other way
+            around.
           </motion.p>
 
           <motion.p
