@@ -31,9 +31,9 @@ const fadeInRight: Variants = {
 
 // Placeholder paths — drop the real images into public/images/showcase/
 const SHOWCASE = {
-  main: "/images/showcase/dashboard.jpg",
-  card1: "/images/showcase/kas-bank.jpg",
-  card2: "/images/showcase/stock-request.jpg",
+  main: "/images/showcase/dashboard.png",
+  card1: "/images/showcase/kas-bank.png",
+  card2: "/images/showcase/stock-request.png",
 } as const;
 
 function ScreenshotCard({
