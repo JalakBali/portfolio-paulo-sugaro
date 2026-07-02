@@ -1,7 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import BusinessDifferently from "@/components/sections/BusinessDifferently";
 import UnderstandingYourBusiness from "@/components/sections/UnderstandingYourBusiness";
-import ProblemsWeSolve from "@/components/sections/ProblemsWeSolve";
+import OurApproach from "@/components/sections/OurApproach";
 import Solutions from "@/components/sections/Solutions";
 import WhyWorkWithMe from "@/components/sections/WhyWorkWithMe";
 import About from "@/components/sections/About";
@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <BusinessDifferently />
       <UnderstandingYourBusiness />
-      <ProblemsWeSolve />
+      <OurApproach />
       <Solutions />
       <WhyWorkWithMe />
       <About />
