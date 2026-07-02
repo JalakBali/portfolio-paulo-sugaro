@@ -1,5 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import BusinessDifferently from "@/components/sections/BusinessDifferently";
+import UnderstandingYourBusiness from "@/components/sections/UnderstandingYourBusiness";
 import ProblemsWeSolve from "@/components/sections/ProblemsWeSolve";
 import Solutions from "@/components/sections/Solutions";
 import WhyWorkWithMe from "@/components/sections/WhyWorkWithMe";
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <BusinessDifferently />
+      <UnderstandingYourBusiness />
       <ProblemsWeSolve />
       <Solutions />
       <WhyWorkWithMe />
