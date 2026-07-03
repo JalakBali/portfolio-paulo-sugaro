@@ -1,33 +1,51 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { Code2, Zap, Globe, Database, GitBranch } from "lucide-react";
+import {
+  Wallet,
+  Warehouse,
+  ShoppingCart,
+  Settings,
+  BarChart3,
+  Zap,
+} from "lucide-react";
 
 const services = [
   {
-    icon: Code2,
-    title: "Custom Software",
-    description: "Tailor-made applications built around your business process.",
+    icon: Wallet,
+    title: "Finance & Accounting",
+    description:
+      "Track transactions, cash flow, and reporting with fewer manual processes.",
+  },
+  {
+    icon: Warehouse,
+    title: "Inventory & Warehouse",
+    description:
+      "Manage stock, warehouse activities, requests, and transfers from one place.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "Purchasing",
+    description:
+      "Simplify purchasing workflows, suppliers, approvals, and procurement records.",
+  },
+  {
+    icon: Settings,
+    title: "Operations",
+    description:
+      "Support daily business activities with software built around your workflow.",
+  },
+  {
+    icon: BarChart3,
+    title: "Reporting & Dashboards",
+    description:
+      "Transform operational data into clear dashboards and reports.",
   },
   {
     icon: Zap,
     title: "Business Automation",
-    description: "Reduce repetitive work, manual tasks, and operational bottlenecks.",
-  },
-  {
-    icon: Globe,
-    title: "Web Applications",
-    description: "Fast, secure, and scalable web applications for modern businesses.",
-  },
-  {
-    icon: Database,
-    title: "Internal Business Systems",
-    description: "Accounting, inventory, operations, CRM, HR, and reporting systems.",
-  },
-  {
-    icon: GitBranch,
-    title: "Workflow Automation",
-    description: "Connect people, processes, and data into a smoother workflow.",
+    description:
+      "Reduce repetitive work through automation and workflow improvements.",
   },
 ];
 
@@ -61,10 +79,17 @@ export default function Solutions() {
             What We Build
           </span>
           <h2 className="mt-2 font-heading text-3xl font-bold text-white md:text-4xl">
-            Solutions for Growing Businesses
+            Solutions Built Around
+            <br />
+            Business Operations
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-            Software designed around your workflow — not the other way around.
+            Every business has different workflows, but most operational
+            challenges fall into a few key areas.
+          </p>
+          <p className="mx-auto mt-2 max-w-2xl text-gray-400">
+            We build software that connects these operations into one
+            integrated system.
           </p>
         </motion.div>
 
@@ -79,7 +104,7 @@ export default function Solutions() {
             <motion.div
               key={title}
               variants={cardVariants}
-              className="rounded-xl border border-gray-800 bg-[#111827] p-6 transition-colors hover:border-[#6BB8D4]/50"
+              className="rounded-xl border border-gray-800 bg-[#111827] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#6BB8D4]/50"
             >
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-[#6BB8D4]/10">
                 <Icon size={24} className="text-[#6BB8D4]" />
