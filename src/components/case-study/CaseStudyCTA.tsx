@@ -40,7 +40,7 @@ export default function CaseStudyCTA({ projectTitle }: CaseStudyCTAProps) {
 
           <div className="mt-8 flex justify-center">
             <a
-              href="mailto:sugiharto@budidarman.my.id"
+              href="mailto:hello@paulosugaro.com"
               className="inline-block rounded-full bg-[#6BB8D4] px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#5aa6c2]"
             >
               Discuss Your Project

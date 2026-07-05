@@ -7,8 +7,8 @@ const contactItems = [
   {
     icon: Mail,
     label: "Email",
-    value: "sugiharto@budidarman.my.id",
-    href: "mailto:sugiharto@budidarman.my.id",
+    value: "hello@paulosugaro.com",
+    href: "mailto:hello@paulosugaro.com",
   },
   {
     icon: MessageCircle,
@@ -103,7 +103,7 @@ export default function Contact() {
 
           <motion.div variants={fadeUp} className="flex justify-center lg:justify-start">
             <a
-              href="mailto:sugiharto@budidarman.my.id"
+              href="mailto:hello@paulosugaro.com"
               className="inline-block rounded-full bg-[#6BB8D4] px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#5aa6c2]"
             >
               Discuss Your Project
