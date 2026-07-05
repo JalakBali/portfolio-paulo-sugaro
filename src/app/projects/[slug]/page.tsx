@@ -32,6 +32,9 @@ export async function generateMetadata({
   return {
     title: `${project.title} | Paulo Sugaro`,
     description: project.description,
+    alternates: {
+      canonical: `/projects/${slug}`,
+    },
   };
 }
 

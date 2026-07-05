@@ -25,9 +25,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://paulosugaro.com"),
   title: "Paulo Sugaro — Custom Software & Business Automation",
   description:
     "Custom software, business automation, internal systems, and web applications for growing businesses in Bali and beyond.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Paulo Sugaro",
+    description: "Software That Fits Your Business",
+    url: "https://paulosugaro.com",
+    siteName: "Paulo Sugaro",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Paulo Sugaro",
+    description: "Software That Fits Your Business",
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
