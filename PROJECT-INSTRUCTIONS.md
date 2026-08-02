@@ -39,6 +39,7 @@ Diambil langsung dari `package.json`, bukan dari ingatan:
 | gray-matter | ^4.0.3 | Parsing frontmatter file markdown blog |
 | remark / remark-html | ^15.0.1 / ^16.0.1 | Render markdown blog jadi HTML |
 | @tailwindcss/typography | ^0.5.20 | Styling konten artikel blog (`prose`) |
+| resend | ^6.18.1 | Kirim email dari contact form (`/api/contact`) |
 
 ⚠️ Catatan: project ini pakai **Next.js 16**, versi yang cukup baru — kalau minta bantuan soal API/convention Next.js, jangan asumsikan sama seperti Next.js 13/14 di training data.
 
@@ -60,6 +61,8 @@ src/
 │   ├── globals.css               # Tailwind v4 theme vars (@theme inline) + typography plugin
 │   ├── robots.ts
 │   ├── sitemap.ts
+│   ├── api/
+│   │   └── contact/route.ts      # POST handler — validasi, honeypot, rate limit, kirim via Resend
 │   ├── blog/
 │   │   ├── page.tsx              # listing semua artikel blog
 │   │   └── [slug]/page.tsx       # dynamic blog post page
@@ -79,7 +82,8 @@ src/
 │   │   ├── WhyWorkWithMe.tsx
 │   │   ├── About.tsx
 │   │   ├── TechStack.tsx
-│   │   └── Contact.tsx
+│   │   ├── Contact.tsx
+│   │   └── ContactForm.tsx       # form client component, dipakai di dalam Contact.tsx
 │   ├── case-study/                # komponen khusus halaman /projects/[slug]
 │   │   ├── CaseStudyHero.tsx
 │   │   ├── CaseStudyOverview.tsx
@@ -124,7 +128,7 @@ Urutan render di `src/app/page.tsx`:
 | WhyWorkWithMe | ✅ Selesai |
 | About | ✅ Selesai |
 | TechStack | ✅ Selesai |
-| Contact | ✅ Selesai |
+| Contact | ✅ Selesai (sudah include working contact form via Resend, bukan cuma mailto — lihat bagian "📧 Contact Form & Email" di bawah) |
 | Footer | ✅ Selesai |
 | Case Study page (`/projects/[slug]`) — Hero, Overview, Challenges, SolutionSections, Results, TechStack, CTA | ✅ Selesai (7 komponen, semua terpakai) |
 | Blog (listing + detail) — `/blog` & `/blog/[slug]` | ✅ Selesai |
@@ -141,6 +145,7 @@ Urutan render di `src/app/page.tsx`:
 - **Styling Tailwind**: campuran antara token tema (`bg-accent`, `text-accent-gold`, `bg-background`) dan **arbitrary hex value** langsung di className (`bg-[#6BB8D4]`, `bg-[#111827]`) — belum 100% konsisten pakai token, jadi kalau nambah section baru sebaiknya pakai token tema (`accent`, `accent-gold`, dst) biar rapi ke depannya.
 - **Animasi**: pola konsisten pakai `framer-motion` — `Variants` di-define di atas komponen (`fadeUp`, `fadeInLeft`, `fadeInRight`), reveal-on-scroll pakai `whileInView` + `viewport={{ once: true }}`, stagger children pakai `staggerChildren` di parent variant.
 - **Images**: selalu lewat `next/image`, path dari folder `public/images/...`.
+- **Anchor link ke section homepage**: WAJIB format absolut `/#section-id` (contoh: `/#contact`, `/#projects`), bukan `#section-id` relatif. Alasan: link relatif cuma berfungsi kalau section tujuannya ada di halaman yang sedang dibuka — begitu diklik dari halaman lain (`/blog`, `/blog/[slug]`, `/projects/[slug]`), link relatif diam saja karena section-nya tidak ada di situ. `next/link` App Router sudah otomatis menangani navigasi ke `/` + scroll ke elemen id-nya, jadi tidak perlu `onClick`/`scrollIntoView` custom.
 
 ---
 
@@ -174,6 +179,25 @@ Blog dibangun mengikuti pola yang sama dengan case study (`/projects/[slug]`) �
 | Komponen | `src/components/blog/BlogList.tsx`, `BlogPostHeader.tsx`, `BlogCTA.tsx` | Semua `'use client'`, styling & animasi konsisten dengan `SelectedProjects.tsx`/`CaseStudyHero.tsx`/`CaseStudyCTA.tsx`. `BlogCTA` mengarah ke `/#contact` (section Contact di homepage), bukan `mailto:` langsung. |
 
 Nambah artikel baru = tinggal taruh file `.md` baru di `content/blog/` dengan frontmatter yang sesuai — listing & detail page otomatis ke-generate saat build, tidak perlu ubah kode.
+
+---
+
+## 📧 Contact Form & Email
+
+Contact form di section Contact (homepage) kirim email langsung ke inbox lewat Resend — bukan lagi cuma `mailto:`.
+
+| Bagian | Lokasi | Detail |
+|---|---|---|
+| Dependency | `resend` (^6.18.1) | SDK resmi Resend untuk kirim email dari server. |
+| API route | `src/app/api/contact/route.ts` | Route Handler `POST`. Alurnya: cek honeypot (kalau terisi, balas sukses palsu tanpa kirim apa-apa) → rate limit in-memory **3 request/10 menit per IP** (key dari header `x-forwarded-for`) → validasi field wajib + format email → kirim email via Resend. |
+| Pengirim & tujuan | — | Dari `noreply@paulosugaro.com`, ke `hello@paulosugaro.com`, dengan **Reply-To** di-set ke alamat email pengirim form — jadi bisa langsung reply dari inbox tanpa copy-paste alamat. |
+| Komponen form | `src/components/sections/ContactForm.tsx` | Client component, dipakai di dalam `Contact.tsx`. State `idle/loading/success/error`, honeypot tersembunyi (`position:absolute; left:-9999px`). |
+
+**Environment variable — WAJIB di-set di 2 tempat:**
+1. **Vercel** — `RESEND_API_KEY`, scope **Production + Preview**, ditandai **Sensitive**.
+2. **`.env.local`** — untuk development lokal (file ini di-`.gitignore`, tidak pernah ke-commit).
+
+Domain `paulosugaro.com` sudah diverifikasi di Resend (region **Tokyo, ap-northeast-1**) lewat Cloudflare auto-configure — jadi record DNS (SPF/DKIM/dsb) sudah otomatis benar, tidak perlu setting manual tambahan di Cloudflare.
 
 ---
 
