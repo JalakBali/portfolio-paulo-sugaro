@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-[#0D1117] py-7">
@@ -5,6 +7,13 @@ export default function Footer() {
         <p className="text-sm font-medium uppercase tracking-widest text-[#6BB8D4]">
           Software That Fits Your Business
         </p>
+
+        <Link
+          href="/blog"
+          className="text-sm text-gray-400 transition-colors hover:text-white"
+        >
+          Blog
+        </Link>
 
         <hr className="w-full border-t border-gray-800" />
 

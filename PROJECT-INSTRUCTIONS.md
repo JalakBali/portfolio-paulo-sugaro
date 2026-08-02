@@ -36,6 +36,9 @@ Diambil langsung dari `package.json`, bukan dari ingatan:
 | typescript | ^5 | Bahasa |
 | eslint / eslint-config-next | ^9 / 16.2.9 | Linting |
 | @types/node, @types/react, @types/react-dom | ^20 / ^19 / ^19 | Types |
+| gray-matter | ^4.0.3 | Parsing frontmatter file markdown blog |
+| remark / remark-html | ^15.0.1 / ^16.0.1 | Render markdown blog jadi HTML |
+| @tailwindcss/typography | ^0.5.20 | Styling konten artikel blog (`prose`) |
 
 ⚠️ Catatan: project ini pakai **Next.js 16**, versi yang cukup baru — kalau minta bantuan soal API/convention Next.js, jangan asumsikan sama seperti Next.js 13/14 di training data.
 
@@ -46,13 +49,20 @@ Font: Geist Sans/Mono, **Plus Jakarta Sans** (heading), **Inter** (body) — sem
 ## 📂 Struktur Folder (src/)
 
 ```
+content/
+└── blog/
+    └── saas-tax-custom-cloud-systems.md   # artikel blog, format frontmatter + markdown
+
 src/
 ├── app/
 │   ├── layout.tsx
 │   ├── page.tsx                  # homepage — assemble semua section
-│   ├── globals.css               # Tailwind v4 theme vars (@theme inline)
+│   ├── globals.css               # Tailwind v4 theme vars (@theme inline) + typography plugin
 │   ├── robots.ts
 │   ├── sitemap.ts
+│   ├── blog/
+│   │   ├── page.tsx              # listing semua artikel blog
+│   │   └── [slug]/page.tsx       # dynamic blog post page
 │   └── projects/
 │       └── [slug]/page.tsx       # dynamic case study page
 ├── components/
@@ -69,21 +79,25 @@ src/
 │   │   ├── WhyWorkWithMe.tsx
 │   │   ├── About.tsx
 │   │   ├── TechStack.tsx
-│   │   ├── Contact.tsx
-│   │   ├── Projects.tsx          # ⚠️ ada file-nya tapi TIDAK di-import di mana pun (orphan/legacy)
-│   │   └── Skills.tsx            # ⚠️ sama, orphan/legacy
-│   └── case-study/                # komponen khusus halaman /projects/[slug]
-│       ├── CaseStudyHero.tsx
-│       ├── CaseStudyOverview.tsx
-│       ├── CaseStudyChallenges.tsx
-│       ├── CaseStudySolutionSections.tsx
-│       ├── CaseStudyResults.tsx
-│       ├── CaseStudyTechStack.tsx
-│       └── CaseStudyCTA.tsx
+│   │   └── Contact.tsx
+│   ├── case-study/                # komponen khusus halaman /projects/[slug]
+│   │   ├── CaseStudyHero.tsx
+│   │   ├── CaseStudyOverview.tsx
+│   │   ├── CaseStudyChallenges.tsx
+│   │   ├── CaseStudySolutionSections.tsx
+│   │   ├── CaseStudyResults.tsx
+│   │   ├── CaseStudyTechStack.tsx
+│   │   └── CaseStudyCTA.tsx
+│   └── blog/                      # komponen khusus /blog & /blog/[slug]
+│       ├── BlogList.tsx
+│       ├── BlogPostHeader.tsx
+│       └── BlogCTA.tsx
 ├── data/
 │   └── projects.ts               # single source of truth data project (typed `Project[]`)
 └── lib/
-    └── utils.ts
+    ├── utils.ts
+    ├── tech-icons.tsx            # 10 SVG icon tech stack, diselamatkan dari Skills.tsx
+    └── blog.ts                   # helper baca & parse file markdown di content/blog/
 ```
 
 **Pola penamaan:**
@@ -113,7 +127,8 @@ Urutan render di `src/app/page.tsx`:
 | Contact | ✅ Selesai |
 | Footer | ✅ Selesai |
 | Case Study page (`/projects/[slug]`) — Hero, Overview, Challenges, SolutionSections, Results, TechStack, CTA | ✅ Selesai (7 komponen, semua terpakai) |
-| Testimonials / Blog / FAQ / Pricing | ⏳ Belum ada file sama sekali (umum ada di site company profile, tapi belum tentu memang direncanakan — cek dulu ke aku kalau relevan) |
+| Blog (listing + detail) — `/blog` & `/blog/[slug]` | ✅ Selesai |
+| Testimonials / FAQ / Pricing | ⏳ Belum ada file sama sekali (umum ada di site company profile, tapi belum tentu memang direncanakan — cek dulu ke aku kalau relevan) |
 
 ---
 
@@ -143,6 +158,22 @@ Didefinisikan di `src/app/globals.css` (`:root` + `@theme inline` — Tailwind v
 | `--accent-gold` | `bg-accent-gold` / `text-accent-gold` | `#D4A853` | Warna aksen kedua (gold) |
 
 Catatan: di banyak komponen, warna-warna ini sering ditulis ulang sebagai hex literal (`#6BB8D4`, `#111827`, dll) alih-alih pakai class token — konsisten secara visual, tapi kurang konsisten secara kode.
+
+---
+
+## 📝 Blog
+
+Blog dibangun mengikuti pola yang sama dengan case study (`/projects/[slug]`) — data mentah di luar `src/`, helper baca data, lalu server component yang fetch data dan render lewat komponen client bertema `framer-motion`.
+
+| Bagian | Lokasi | Fungsi |
+|---|---|---|
+| Artikel mentah | `content/blog/*.md` | Satu file markdown per artikel. Frontmatter wajib: `title`, `excerpt`, `date`, `author`, `slug`. Body markdown dirender jadi HTML saat build. |
+| Helper data | `src/lib/blog.ts` | `getAllPosts()`, `getPostBySlug(slug)`, `getAllPostSlugs()` — baca & parse file di `content/blog/` pakai `gray-matter` (frontmatter) + `remark`/`remark-html` (markdown → HTML). H1 pertama di body otomatis di-strip karena title sudah ditampilkan di header. |
+| Listing page | `src/app/blog/page.tsx` | Server component, panggil `getAllPosts()`, render `<BlogList />`. |
+| Detail page | `src/app/blog/[slug]/page.tsx` | Server component, `generateStaticParams()` dari `getAllPostSlugs()`, `generateMetadata()` dari `getPostBySlug()` (title + excerpt untuk SEO), render `<BlogPostHeader />` → body markdown (`prose prose-invert`, di-styling manual pakai token tema lewat modifier `prose-*`) → `<BlogCTA />`. |
+| Komponen | `src/components/blog/BlogList.tsx`, `BlogPostHeader.tsx`, `BlogCTA.tsx` | Semua `'use client'`, styling & animasi konsisten dengan `SelectedProjects.tsx`/`CaseStudyHero.tsx`/`CaseStudyCTA.tsx`. `BlogCTA` mengarah ke `/#contact` (section Contact di homepage), bukan `mailto:` langsung. |
+
+Nambah artikel baru = tinggal taruh file `.md` baru di `content/blog/` dengan frontmatter yang sesuai — listing & detail page otomatis ke-generate saat build, tidak perlu ubah kode.
 
 ---
 
