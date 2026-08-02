@@ -6,12 +6,12 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#solutions" },
-  { label: "Approach", href: "#approach" },
-  { label: "About", href: "#about" },
+  { label: "Home", href: "/#home" },
+  { label: "Services", href: "/#solutions" },
+  { label: "Approach", href: "/#approach" },
+  { label: "About", href: "/#about" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -34,7 +34,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="#home" className="flex items-center">
+        <Link href="/#home" className="flex items-center">
           <Image
             src="/images/logo.png"
             alt="Paulo Sugaro"
@@ -59,7 +59,7 @@ export default function Navbar() {
         </ul>
 
         <Link
-          href="#contact"
+          href="/#contact"
           className="hidden md:inline-block rounded-full bg-[#6BB8D4] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5aa6c2]"
         >
           Discuss Your Project
@@ -92,7 +92,7 @@ export default function Navbar() {
             ))}
             <li>
               <Link
-                href="#contact"
+                href="/#contact"
                 onClick={() => setIsMenuOpen(false)}
                 className="inline-block rounded-full bg-[#6BB8D4] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5aa6c2]"
               >

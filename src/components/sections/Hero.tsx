@@ -150,13 +150,13 @@ export default function Hero() {
             className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:justify-start"
           >
             <Link
-              href="#projects"
+              href="/#projects"
               className="rounded-full bg-[#6BB8D4] px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
               View Projects
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               className="rounded-full border-2 border-[#6BB8D4]/60 px-7 py-3 text-sm font-medium text-[#6BB8D4] transition-colors hover:border-[#6BB8D4] hover:bg-[#6BB8D4]/10"
             >
               Let&apos;s Talk
