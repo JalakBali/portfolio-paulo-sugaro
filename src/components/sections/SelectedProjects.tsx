@@ -149,6 +149,35 @@ export default function SelectedProjects() {
             </motion.div>
           ))}
         </motion.div>
+
+        <motion.div
+          className="mt-6 flex flex-col items-start gap-2 rounded-xl border border-gray-700/50 bg-[#1F2937]/60 p-5 sm:flex-row sm:items-center sm:justify-between"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={cardVariants}
+        >
+          <div>
+            <span className="inline-block rounded-full border border-gray-700/50 bg-gray-800/50 px-2.5 py-0.5 text-[11px] uppercase tracking-wide text-gray-400">
+              Live Project
+            </span>
+            <h3 className="mt-2 font-heading text-base font-semibold text-white">
+              Hioe Mahjong Academy
+            </h3>
+            <p className="mt-1 text-sm text-gray-400">
+              An interactive learning platform for learning mahjong through
+              lessons and hands-on practice.
+            </p>
+          </div>
+          <a
+            href="https://mahjong.paulosugaro.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-fit shrink-0 items-center text-sm font-medium text-[#6BB8D4] transition-transform duration-200 hover:translate-x-0.5 hover:underline"
+          >
+            Visit Live Project ↗
+          </a>
+        </motion.div>
       </div>
     </section>
   );
