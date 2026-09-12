@@ -10,11 +10,13 @@ const contactItems = [
     value: "hello@paulosugaro.com",
     href: "mailto:hello@paulosugaro.com",
   },
-  {
-    icon: MessageCircle,
-    value: "+62 811 5727 800",
-    href: "https://wa.me/628115727800",
-  },
+  // HIDDEN 12 Sep 2026 — WhatsApp link disembunyikan sementara,
+  // lihat PROJECT-INSTRUCTIONS.md
+  // {
+  //   icon: MessageCircle,
+  //   value: "+62 811 5727 800",
+  //   href: "https://wa.me/628115727800",
+  // },
 ];
 
 const staggerContainer: Variants = {

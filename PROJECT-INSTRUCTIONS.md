@@ -227,3 +227,8 @@ Domain `paulosugaro.com` sudah diverifikasi di Resend (region **Tokyo, ap-northe
   1. Di `src/app/page.tsx`, hapus komentar penanda `HIDDEN 12 Sep 2026` dan uncomment baris `<SelectedProjects />`.
   2. Di `src/components/sections/Hero.tsx`, hapus komentar penanda `HIDDEN 12 Sep 2026` dan uncomment tombol `View Projects` (`<Link href="/#projects">`).
   3. Jalankan `npm run build` untuk memastikan tidak ada error.
+
+- **WhatsApp link (Contact)** — disembunyikan dari section Contact 12 Sep 2026. Entry-nya di array `contactItems` (`src/components/sections/Contact.tsx`) di-comment, bukan dihapus. Import `MessageCircle` dari `lucide-react` sengaja dibiarkan meski jadi unused, supaya gampang di-restore tanpa re-import manual.
+- **Cara restore:**
+  1. Di `src/components/sections/Contact.tsx`, hapus komentar penanda `HIDDEN 12 Sep 2026` dan uncomment entry `{ icon: MessageCircle, value: "+62 811 5727 800", href: "https://wa.me/628115727800" }` di array `contactItems`.
+  2. Jalankan `npm run build` untuk memastikan tidak ada error.
