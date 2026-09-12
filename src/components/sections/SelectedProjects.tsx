@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 
 const projects = [
   {
+    slug: "business-management-platform",
     title: "Business Management Platform",
     subtitle: "An integrated system for multi-unit hospitality operations.",
     description:
@@ -14,6 +16,7 @@ const projects = [
     featured: true,
   },
   {
+    slug: "cash-bank-workflow-system",
     title: "Cash & Bank Workflow System",
     subtitle:
       "A faster way to review, classify, and manage financial transactions.",
@@ -23,6 +26,7 @@ const projects = [
     tags: ["Cash & Bank", "COA Review", "Automation"],
   },
   {
+    slug: "inventory-stock-operations",
     title: "Inventory & Stock Operations",
     subtitle:
       "A practical workflow for requests, stock movement, and warehouse control.",
@@ -79,7 +83,7 @@ export default function SelectedProjects() {
           viewport={{ once: true }}
           variants={staggerGrid}
         >
-          {projects.map(({ title, subtitle, description, image, tags, featured }) => (
+          {projects.map(({ slug, title, subtitle, description, image, tags, featured }) => (
             <motion.div
               key={title}
               variants={cardVariants}
@@ -138,12 +142,12 @@ export default function SelectedProjects() {
                       </span>
                     ))}
                   </div>
-                  <a
-                    href="#"
+                  <Link
+                    href={`/projects/${slug}`}
                     className="mt-5 inline-flex w-fit items-center text-sm font-medium text-[#6BB8D4] transition-transform duration-200 hover:translate-x-0.5 hover:underline"
                   >
                     View Case Study →
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

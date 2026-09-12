@@ -123,7 +123,7 @@ Urutan render di `src/app/page.tsx`:
 | BusinessDifferently | ✅ Selesai |
 | UnderstandingYourBusiness | ✅ Selesai |
 | OurApproach | ✅ Selesai |
-| SelectedProjects | ✅ Selesai |
+| SelectedProjects | ⏸️ Disembunyikan sementara (12 Sep 2026) — komponen masih ada di kode, tinggal di-uncomment di page.tsx untuk restore (lihat catatan restore di bawah) |
 | Solutions | ⏸️ Disembunyikan sementara (2 Agu 2026) — komponen masih ada di kode, tinggal di-uncomment di page.tsx dan tambahkan lagi link Navbar untuk restore |
 | WhyWorkWithMe | ✅ Selesai |
 | About | ✅ Selesai |
@@ -208,10 +208,22 @@ Domain `paulosugaro.com` sudah diverifikasi di Resend (region **Tokyo, ap-northe
 
 ---
 
+## 🔧 Riwayat Perbaikan
+
+- **12 Sep 2026 — Link "View Case Study" di `SelectedProjects.tsx` diperbaiki dari dead-link.** Sebelumnya tiap card pakai `href="#"` (tidak mengarah kemana pun). Sekarang array `projects` lokal di file itu punya field `slug` (cocok dengan `slug` di `src/data/projects.ts`), dan link dibuat dinamis lewat `href={\`/projects/${slug}\`}` sehingga tiap card mengarah ke halaman case study yang benar di `/projects/[slug]`.
+
+---
+
 ## ⏸️ Section yang Sedang Disembunyikan Sementara
 
 - **Solutions** — disembunyikan dari homepage 2 Agu 2026. Komponen (`src/components/sections/Solutions.tsx`) **tidak dihapus**, masih utuh.
 - **Cara restore:**
   1. Di `src/app/page.tsx`, hapus komentar penanda `HIDDEN 2 Agu 2026` dan uncomment baris `<Solutions />`.
   2. Di `src/components/layout/Navbar.tsx`, tambahkan kembali `{ label: "Services", href: "/#solutions" }` ke array `NAV_LINKS` (lihat komentar `NOTE` di atas array untuk posisi semula), lalu hapus komentar `NOTE`-nya.
+  3. Jalankan `npm run build` untuk memastikan tidak ada error.
+
+- **SelectedProjects** — disembunyikan dari homepage 12 Sep 2026. Komponen (`src/components/sections/SelectedProjects.tsx`) **tidak dihapus**, masih utuh. Tombol "View Projects" di `Hero.tsx` (yang link ke `/#projects`) ikut disembunyikan bersamaan karena section targetnya tidak dirender.
+- **Cara restore (harus dilakukan bersamaan, keduanya):**
+  1. Di `src/app/page.tsx`, hapus komentar penanda `HIDDEN 12 Sep 2026` dan uncomment baris `<SelectedProjects />`.
+  2. Di `src/components/sections/Hero.tsx`, hapus komentar penanda `HIDDEN 12 Sep 2026` dan uncomment tombol `View Projects` (`<Link href="/#projects">`).
   3. Jalankan `npm run build` untuk memastikan tidak ada error.

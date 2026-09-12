@@ -149,12 +149,16 @@ export default function Hero() {
             variants={fadeInLeft}
             className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:justify-start"
           >
-            <Link
+            {/* HIDDEN 12 Sep 2026 — "View Projects" disembunyikan sementara karena target
+                section (/#projects) tidak dirender selama SelectedProjects di-hide.
+                Untuk restore: uncomment bersamaan dengan <SelectedProjects /> di
+                src/app/page.tsx, lihat PROJECT-INSTRUCTIONS.md */}
+            {/* <Link
               href="/#projects"
               className="rounded-full bg-[#6BB8D4] px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
               View Projects
-            </Link>
+            </Link> */}
             <Link
               href="/#contact"
               className="rounded-full border-2 border-[#6BB8D4]/60 px-7 py-3 text-sm font-medium text-[#6BB8D4] transition-colors hover:border-[#6BB8D4] hover:bg-[#6BB8D4]/10"
