@@ -133,9 +133,9 @@ export default function Hero() {
             className="mx-auto mt-3 max-w-xl text-sm text-gray-400 md:mx-0"
           >
             We design custom software for businesses that need more than
-            off-the-shelf solutions. From accounting and inventory to warehouse
-            operations and reporting, every system is built around the way your
-            team already works.
+            off-the-shelf solutions. Every system is built around the way your
+            team already works—so it fits your process, not the other way
+            around.
           </motion.p>
 
           <motion.p
