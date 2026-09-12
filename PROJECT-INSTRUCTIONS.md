@@ -126,7 +126,7 @@ Urutan render di `src/app/page.tsx`:
 | SelectedProjects | ⏸️ Disembunyikan sementara (12 Sep 2026) — komponen masih ada di kode, tinggal di-uncomment di page.tsx untuk restore (lihat catatan restore di bawah) |
 | Solutions | ⏸️ Disembunyikan sementara (2 Agu 2026) — komponen masih ada di kode, tinggal di-uncomment di page.tsx dan tambahkan lagi link Navbar untuk restore |
 | WhyWorkWithMe | ✅ Selesai |
-| About | ✅ Selesai |
+| About | ⏸️ Foto disembunyikan sementara (12 Sep 2026), layout jadi 1 kolom — lihat catatan restore di bawah |
 | TechStack | ✅ Selesai |
 | Contact | ✅ Selesai (sudah include working contact form via Resend, bukan cuma mailto — lihat bagian "📧 Contact Form & Email" di bawah) |
 | Footer | ✅ Selesai |
@@ -232,3 +232,13 @@ Domain `paulosugaro.com` sudah diverifikasi di Resend (region **Tokyo, ap-northe
 - **Cara restore:**
   1. Di `src/components/sections/Contact.tsx`, hapus komentar penanda `HIDDEN 12 Sep 2026` dan uncomment entry `{ icon: MessageCircle, value: "+62 811 5727 800", href: "https://wa.me/628115727800" }` di array `contactItems`.
   2. Jalankan `npm run build` untuk memastikan tidak ada error.
+
+- **Foto About** — disembunyikan dari section About 12 Sep 2026. Elemen `<Image src="/images/Paul.png" .../>` (dibungkus `<motion.div variants={fromLeft} ...>`) di-comment, bukan dihapus. Layout section diubah dari grid 2 kolom jadi 1 kolom penuh (teks full-width) supaya foto benar-benar hilang dari layout, bukan cuma disembunyikan visual dengan ruang kosong tersisa.
+- **Struktur original (untuk restore persis):**
+  - Container original: `<div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 px-4 md:grid-cols-[35%_65%]">` (grid 2 kolom di desktop, 35% kolom foto / 65% kolom teks, max-w-6xl).
+  - Container saat ini (disembunyikan): `<div className="mx-auto max-w-3xl px-4">` (1 kolom, max-w-3xl, hanya berisi blok teks).
+  - Elemen foto original persis: `<motion.div variants={fromLeft} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex justify-center md:justify-start"><Image src="/images/Paul.png" alt="Paul, software developer based in Bali" width={480} height={600} className="h-auto w-72 rounded-2xl border border-gray-700/50 object-cover object-top shadow-lg shadow-black/30 sm:w-80 md:w-full" /></motion.div>`.
+- **Cara restore:**
+  1. Di `src/components/sections/About.tsx`, ganti `className` container dari `"mx-auto max-w-3xl px-4"` kembali ke `"mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 px-4 md:grid-cols-[35%_65%]"`.
+  2. Hapus komentar penanda `HIDDEN 12 Sep 2026` dan uncomment blok `<motion.div>` foto (variant `fromLeft`) di atas blok Text, persis seperti struktur original di atas.
+  3. Jalankan `npm run build` untuk memastikan tidak ada error.
