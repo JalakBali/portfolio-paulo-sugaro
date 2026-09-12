@@ -94,30 +94,26 @@ export default function About() {
             variants={fadeUp}
             className="font-heading text-3xl font-bold text-white md:text-4xl"
           >
-            Software Should Adapt
-            <br />
-            to People — Not
-            <br />
-            the Other Way Around.
+            Software Should Adapt to People
+            &mdash; Not the Other Way Around.
           </motion.h2>
 
           <motion.div variants={staggerContainer} className="flex flex-col gap-6">
             <motion.p variants={fadeUp} className="leading-relaxed text-gray-300">
-              For years I&rsquo;ve worked closely with businesses that struggled
-              because their software didn&rsquo;t match the way they actually
-              operated.
+              I believe good software starts with understanding how people
+              actually work &mdash; not the other way around. Too often, teams
+              are forced to bend their workflow to fit a system that was never
+              built with them in mind.
             </motion.p>
 
             <motion.p variants={fadeUp} className="leading-relaxed text-gray-300">
-              Instead of forcing teams to change their workflow, I prefer to
-              understand how people work first&mdash;then design software that
-              supports those processes.
+              My approach is the opposite: understand the process first, then
+              design software around it &mdash; not the other way around.
             </motion.p>
 
             <motion.p variants={fadeUp} className="leading-relaxed text-gray-300">
-              The goal isn&rsquo;t just to build software.
-              <br />
-              It&rsquo;s to help businesses operate with more clarity, less
+              Because the goal isn&rsquo;t just to build software.
+              It&rsquo;s to help people work with more clarity, less
               repetition, and better information.
             </motion.p>
           </motion.div>
