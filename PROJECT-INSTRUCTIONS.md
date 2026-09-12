@@ -124,7 +124,7 @@ Urutan render di `src/app/page.tsx`:
 | UnderstandingYourBusiness | ✅ Selesai |
 | OurApproach | ✅ Selesai |
 | SelectedProjects | ✅ Selesai |
-| Solutions | ✅ Selesai |
+| Solutions | ⏸️ Disembunyikan sementara (2 Agu 2026) — komponen masih ada di kode, tinggal di-uncomment di page.tsx dan tambahkan lagi link Navbar untuk restore |
 | WhyWorkWithMe | ✅ Selesai |
 | About | ✅ Selesai |
 | TechStack | ✅ Selesai |
@@ -205,3 +205,13 @@ Domain `paulosugaro.com` sudah diverifikasi di Resend (region **Tokyo, ap-northe
 
 - **`sections/Projects.tsx`** — file kosong (0 bytes) sejak initial commit, tidak pernah dipakai. Dihapus 2 Agu 2026.
 - **`sections/Skills.tsx`** — sempat dipakai di homepage (ditambahkan 18 Jun 2026), digantikan `TechStack.tsx` saat redesign business-first (27 Jun 2026). Dihapus 2 Agu 2026 — 10 SVG icon-nya diselamatkan ke `src/lib/tech-icons.tsx` untuk dipakai nanti saat upgrade `TechStack.tsx` jadi versi visual.
+
+---
+
+## ⏸️ Section yang Sedang Disembunyikan Sementara
+
+- **Solutions** — disembunyikan dari homepage 2 Agu 2026. Komponen (`src/components/sections/Solutions.tsx`) **tidak dihapus**, masih utuh.
+- **Cara restore:**
+  1. Di `src/app/page.tsx`, hapus komentar penanda `HIDDEN 2 Agu 2026` dan uncomment baris `<Solutions />`.
+  2. Di `src/components/layout/Navbar.tsx`, tambahkan kembali `{ label: "Services", href: "/#solutions" }` ke array `NAV_LINKS` (lihat komentar `NOTE` di atas array untuk posisi semula), lalu hapus komentar `NOTE`-nya.
+  3. Jalankan `npm run build` untuk memastikan tidak ada error.

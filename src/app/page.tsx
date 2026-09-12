@@ -17,7 +17,8 @@ export default function Home() {
       <UnderstandingYourBusiness />
       <OurApproach />
       <SelectedProjects />
-      <Solutions />
+      {/* HIDDEN 2 Agu 2026 — Solutions section disembunyikan sementara, lihat PROJECT-INSTRUCTIONS.md */}
+      {/* <Solutions /> */}
       <WhyWorkWithMe />
       <About />
       <TechStack />

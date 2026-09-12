@@ -5,9 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
+// NOTE: "Services" link dihapus sementara 2 Agu 2026 (Solutions section di-hide).
+// Untuk restore: tambahkan kembali { label: "Services", href: "/#solutions" } di sini,
+// dan uncomment <Solutions /> di src/app/page.tsx
 const NAV_LINKS = [
   { label: "Home", href: "/#home" },
-  { label: "Services", href: "/#solutions" },
   { label: "Approach", href: "/#approach" },
   { label: "About", href: "/#about" },
   { label: "Blog", href: "/blog" },
