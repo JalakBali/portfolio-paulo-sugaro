@@ -8,12 +8,14 @@ import { Menu, X } from "lucide-react";
 // NOTE: "Services" link dihapus sementara 2 Agu 2026 (Solutions section di-hide).
 // Untuk restore: tambahkan kembali { label: "Services", href: "/#solutions" } di sini,
 // dan uncomment <Solutions /> di src/app/page.tsx
+// HIDDEN 14 Sep 2026 (branch portfolio-freelance) — link Blog disembunyikan
+// karena kontennya masih Bahasa Inggris. Untuk restore: tambahkan kembali
+// { label: "Blog", href: "/blog" } di array ini.
 const NAV_LINKS = [
-  { label: "Home", href: "/#home" },
-  { label: "Approach", href: "/#approach" },
-  { label: "About", href: "/#about" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Beranda", href: "/#home" },
+  { label: "Pendekatan", href: "/#approach" },
+  { label: "Tentang", href: "/#about" },
+  { label: "Kontak", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -64,12 +66,12 @@ export default function Navbar() {
           href="/#contact"
           className="hidden md:inline-block rounded-full bg-[#6BB8D4] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5aa6c2]"
         >
-          Discuss Your Project
+          Diskusikan Proyek Anda
         </Link>
 
         <button
           type="button"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={isMenuOpen ? "Tutup menu" : "Buka menu"}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((open) => !open)}
           className="md:hidden text-gray-300 hover:text-white"
@@ -98,7 +100,7 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
                 className="inline-block rounded-full bg-[#6BB8D4] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5aa6c2]"
               >
-                Discuss Your Project
+                Diskusikan Proyek Anda
               </Link>
             </li>
           </ul>

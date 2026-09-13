@@ -8,15 +8,15 @@ const stack = [
     items: ["Next.js", "React", "Tailwind CSS"],
   },
   {
-    category: "Backend & Automation",
+    category: "Backend & Otomatisasi",
     items: ["Node.js", "Apps Script", "Supabase"],
   },
   {
-    category: "Data & Integration",
+    category: "Data & Integrasi",
     items: ["Google Sheets", "PostgreSQL", "MySQL"],
   },
   {
-    category: "Deployment & Workflow",
+    category: "Deployment & Alur Kerja",
     items: ["GitHub", "Vercel", "Cloud Services"],
   },
 ];
@@ -48,20 +48,20 @@ export default function TechStack() {
           variants={headingVariants}
         >
           <span className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]">
-            Built With Modern Technology
+            Dibangun dengan Teknologi Modern
           </span>
           <h2 className="mt-2 font-heading text-3xl font-bold text-white md:text-4xl">
-            Modern Technology
+            Teknologi Modern
             <br />
-            for Reliable Business Systems
+            untuk Sistem Booking yang Andal
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-            Reliable technology matters&mdash;not because it&rsquo;s new, but
-            because your business depends on it.
+            Teknologi yang andal itu penting&mdash;bukan karena baru, tapi
+            karena bisnis Anda bergantung padanya.
           </p>
           <p className="mx-auto mt-2 max-w-2xl text-gray-400">
-            Every system is built with tools chosen for stability,
-            scalability, and long-term maintainability.
+            Setiap sistem dibangun dengan tools yang dipilih karena stabil,
+            scalable, dan mudah dirawat dalam jangka panjang.
           </p>
         </motion.div>
 

@@ -60,7 +60,7 @@ export default function ContactForm() {
       if (!response.ok || !data.success) {
         setStatus("error");
         setErrorMessage(
-          data.message ?? "Something went wrong. Please try again."
+          data.message ?? "Terjadi kesalahan. Silakan coba lagi."
         );
         return;
       }
@@ -70,7 +70,7 @@ export default function ContactForm() {
     } catch {
       setStatus("error");
       setErrorMessage(
-        "Something went wrong. Please check your connection and try again."
+        "Terjadi kesalahan. Periksa koneksi Anda dan coba lagi."
       );
     }
   }
@@ -85,10 +85,10 @@ export default function ContactForm() {
         className="flex min-h-[380px] flex-col items-center justify-center rounded-2xl border border-accent/25 bg-[#1F2937] p-6 text-center shadow-lg shadow-black/30 sm:p-8"
       >
         <p className="font-heading text-lg font-semibold text-white">
-          Message Sent
+          Pesan Terkirim
         </p>
         <p className="mt-2 max-w-xs text-sm text-gray-300">
-          Thanks! I&apos;ll get back to you within 24 hours.
+          Terima kasih! Saya akan membalas dalam waktu 24 jam.
         </p>
       </motion.div>
     );
@@ -104,7 +104,7 @@ export default function ContactForm() {
       className="rounded-2xl border border-accent/25 bg-[#1F2937] p-6 shadow-lg shadow-black/30 sm:p-8"
     >
       <h3 className="mb-6 font-heading text-lg font-semibold text-white">
-        Send a Message
+        Kirim Pesan
       </h3>
 
       {/* Honeypot — hidden from real users, bots that auto-fill every field will trip it. */}
@@ -130,7 +130,7 @@ export default function ContactForm() {
             htmlFor="name"
             className="mb-1.5 block text-xs uppercase tracking-wider text-gray-500"
           >
-            Name
+            Nama
           </label>
           <input
             type="text"
@@ -139,7 +139,7 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            placeholder="Your name"
+            placeholder="Nama Anda"
             className={inputClasses}
           />
         </div>
@@ -158,7 +158,7 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            placeholder="you@company.com"
+            placeholder="anda@perusahaan.com"
             className={inputClasses}
           />
         </div>
@@ -168,7 +168,7 @@ export default function ContactForm() {
             htmlFor="message"
             className="mb-1.5 block text-xs uppercase tracking-wider text-gray-500"
           >
-            Message
+            Pesan
           </label>
           <textarea
             id="message"
@@ -177,7 +177,7 @@ export default function ContactForm() {
             rows={4}
             value={formData.message}
             onChange={handleChange}
-            placeholder="Tell me a bit about what you're looking to build."
+            placeholder="Ceritakan sedikit tentang sistem booking yang Anda butuhkan."
             className={`${inputClasses} resize-none`}
           />
         </div>
@@ -191,7 +191,7 @@ export default function ContactForm() {
           disabled={status === "loading"}
           className="mt-2 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-[#5aa6c2] disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {status === "loading" ? "Sending..." : "Send Message"}
+          {status === "loading" ? "Mengirim..." : "Kirim Pesan"}
         </button>
       </div>
     </motion.form>

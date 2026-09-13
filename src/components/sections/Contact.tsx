@@ -59,21 +59,21 @@ export default function Contact() {
               variants={fadeUp}
               className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]"
             >
-              Contact
+              Kontak
             </motion.span>
 
             <motion.h2
               variants={fadeUp}
               className="font-heading text-3xl font-bold text-white md:text-4xl lg:text-5xl"
             >
-              Let&rsquo;s Build a Better System
+              Mari Bangun Sistem Booking
               <br />
-              for Your Business
+              yang Lebih Baik untuk Bisnis Anda
             </motion.h2>
 
             <motion.p variants={fadeUp} className="leading-relaxed text-gray-300">
-              Every business has its own workflow — tell me about yours, no
-              pressure, just a conversation.
+              Setiap bisnis punya alur booking-nya sendiri — ceritakan punya
+              Anda, santai saja, ngobrol dulu.
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-2">
@@ -84,7 +84,7 @@ export default function Contact() {
                 className="inline-flex items-center gap-2 rounded-full bg-[#6BB8D4] px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
               >
                 <MessageCircle size={18} />
-                Chat via WhatsApp &mdash; {whatsapp.value}
+                Chat Langsung via WhatsApp &mdash; {whatsapp.value}
               </a>
             </motion.div>
 

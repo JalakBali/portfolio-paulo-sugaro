@@ -7,30 +7,30 @@ const steps = [
   {
     icon: Search,
     number: "01",
-    title: "Understand",
+    title: "Memahami",
     description:
-      "We learn how your team works, where friction happens, and what needs to improve.",
+      "Saya pelajari cara pelanggan Anda booking saat ini, di mana letak masalahnya, dan apa yang perlu diperbaiki.",
   },
   {
     icon: PenTool,
     number: "02",
-    title: "Design",
+    title: "Merancang",
     description:
-      "We map the workflow before writing code, so the system fits the way your business operates.",
+      "Saya petakan alur booking sebelum menulis kode, supaya sistemnya pas dengan cara bisnis Anda beroperasi.",
   },
   {
     icon: Hammer,
     number: "03",
-    title: "Build",
+    title: "Membangun",
     description:
-      "We develop custom software around your process, not around generic templates.",
+      "Saya kembangkan sistem booking khusus sesuai proses Anda, bukan template generik.",
   },
   {
     icon: TrendingUp,
     number: "04",
-    title: "Improve",
+    title: "Menyempurnakan",
     description:
-      "We refine the system with real feedback so it continues to support your business over time.",
+      "Sistem terus disempurnakan berdasarkan feedback nyata supaya tetap mendukung bisnis Anda dari waktu ke waktu.",
   },
 ];
 
@@ -61,15 +61,16 @@ export default function OurApproach() {
           variants={headingVariants}
         >
           <span className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]">
-            Our Approach
+            Pendekatan Kami
           </span>
           <h2 className="mt-2 font-heading text-3xl font-bold text-white md:text-4xl">
-            How We Build Software That Fits Your Business
+            Cara Saya Membangun Sistem Booking yang Sesuai Bisnis Anda
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-            Every project starts with understanding how your business
-            actually works. We map your workflow, design the right system,
-            build carefully, and improve continuously as your business grows.
+            Setiap project dimulai dengan memahami cara pemesanan berjalan di
+            bisnis Anda saat ini. Saya petakan alurnya, rancang sistem yang
+            tepat, bangun dengan cermat, dan terus disempurnakan seiring
+            bisnis Anda berkembang.
           </p>
         </motion.div>
 

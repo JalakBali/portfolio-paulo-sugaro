@@ -4,15 +4,15 @@ import { motion, type Variants } from "framer-motion";
 import { ArrowRight, ArrowDown, X, Check } from "lucide-react";
 
 const genericPoints = [
-  "Less flexible workflows",
-  "Extra manual work",
-  "Higher friction for the team",
+  "Alur booking kaku, tidak fleksibel",
+  "Rawan jadwal bentrok / double booking",
+  "Tim harus catat ulang manual di WhatsApp atau buku",
 ];
 
 const pauloPoints = [
-  "Built around real workflows",
-  "Less duplicate entry",
-  "Designed for how your team actually works",
+  "Dibangun sesuai alur booking Anda",
+  "Anti bentrok jadwal, konfirmasi otomatis",
+  "Dirancang sesuai cara tim Anda benar-benar bekerja",
 ];
 
 const headingVariants: Variants = {
@@ -72,15 +72,15 @@ export default function BusinessDifferently() {
           variants={headingVariants}
         >
           <span className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]">
-            Our Philosophy
+            Filosofi Kami
           </span>
           <h2 className="mt-2 font-heading text-3xl font-bold text-white md:text-4xl">
-            Every Business Works Differently.
+            Sistem Booking Generik vs. Sistem yang Dibangun untuk Anda.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-            Off-the-shelf software often forces teams to change the way they
-            work. We believe software should adapt to your business
-            process—not the other way around.
+            Template booking generik sering memaksa bisnis mengikuti alur
+            kaku yang belum tentu cocok. Saya percaya sistem booking harus
+            mengikuti cara bisnis Anda berjalan—bukan sebaliknya.
           </p>
         </motion.div>
 
@@ -97,14 +97,14 @@ export default function BusinessDifferently() {
           >
             <div className="mb-6 flex items-center gap-3">
               <span className="text-xs font-semibold uppercase tracking-widest text-gray-500">
-                Generic Software
+                Software Booking Generik
               </span>
               <ArrowRight size={16} className="text-gray-600" />
             </div>
             <h3 className="mb-6 font-semibold text-gray-300">
-              Business adapts to the software.
+              Bisnis harus menyesuaikan diri ke software.
             </h3>
-            <FlowCue topLabel="Business" bottomLabel="Software" accent={false} />
+            <FlowCue topLabel="Bisnis" bottomLabel="Software" accent={false} />
             <ul className="space-y-4">
               {genericPoints.map((point) => (
                 <li key={point} className="flex items-start gap-3">
@@ -131,9 +131,9 @@ export default function BusinessDifferently() {
                 <ArrowRight size={16} className="text-[#6BB8D4]" />
               </div>
               <h3 className="mb-6 font-semibold text-white">
-                Software adapts to the business.
+                Software menyesuaikan ke cara bisnis Anda berjalan.
               </h3>
-              <FlowCue topLabel="Software" bottomLabel="Business" accent />
+              <FlowCue topLabel="Software" bottomLabel="Bisnis" accent />
               <ul className="space-y-4">
                 {pauloPoints.map((point) => (
                   <li key={point} className="flex items-start gap-3">

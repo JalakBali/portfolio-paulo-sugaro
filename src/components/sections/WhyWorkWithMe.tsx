@@ -6,26 +6,26 @@ import { Briefcase, Layers, Rocket, MessageSquare } from "lucide-react";
 const reasons = [
   {
     icon: Briefcase,
-    title: "Understand Your Business",
-    description: "Before writing code, we learn how your business actually works.",
+    title: "Memahami Bisnis Anda",
+    description: "Sebelum menulis kode, saya pelajari cara bisnis booking Anda benar-benar berjalan.",
   },
   {
     icon: Layers,
-    title: "Design Around Your Workflow",
+    title: "Dirancang Sesuai Alur Kerja Anda",
     description:
-      "Every system is tailored to support your existing operations—not replace them.",
+      "Setiap sistem disesuaikan untuk mendukung operasional yang sudah berjalan—bukan menggantikannya.",
   },
   {
     icon: Rocket,
-    title: "Build With Modern Technology",
+    title: "Dibangun dengan Teknologi Modern",
     description:
-      "Reliable, scalable, and maintainable software built for long-term growth.",
+      "Software yang andal, scalable, dan mudah dirawat untuk pertumbuhan jangka panjang.",
   },
   {
     icon: MessageSquare,
-    title: "Continuous Improvement",
+    title: "Terus Disempurnakan",
     description:
-      "Software evolves with your business through ongoing refinement and support.",
+      "Sistem berkembang mengikuti bisnis Anda lewat penyempurnaan dan dukungan berkelanjutan.",
   },
 ];
 
@@ -56,17 +56,18 @@ export default function WhyWorkWithMe() {
           variants={headingVariants}
         >
           <span className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]">
-            Our Approach
+            Pendekatan Kami
           </span>
           <h2 className="mt-2 font-heading text-3xl font-bold text-white md:text-4xl">
-            The Paulo Sugaro Approach
+            Pendekatan Paulo Sugaro
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-            Great software starts long before development.
+            Software booking yang bagus dimulai jauh sebelum development.
             <br className="hidden sm:block" />
-            Every successful project begins by understanding how your business
-            works, identifying bottlenecks, and designing a solution that fits
-            your workflow—not forcing your workflow to fit the software.
+            Setiap project sukses dimulai dengan memahami cara bisnis Anda
+            menerima pemesanan, mengenali titik hambatan, dan merancang
+            solusi yang sesuai alur kerja Anda—bukan memaksa alur kerja Anda
+            menyesuaikan software.
           </p>
         </motion.div>
 

@@ -13,39 +13,39 @@ import {
 const problems = [
   {
     icon: FileText,
-    title: "Manual Processes",
+    title: "Booking Masih Manual",
     description:
-      "Your team spends hours repeating the same work every day.",
+      "Tim Anda mencatat pemesanan berulang kali lewat chat, telepon, atau buku catatan setiap hari.",
   },
   {
     icon: TableProperties,
-    title: "Scattered Information",
+    title: "Data Booking Berantakan",
     description:
-      "Important data lives in spreadsheets, WhatsApp, and paper notes.",
+      "Jadwal, data pelanggan, dan status pemesanan tersebar di WhatsApp, spreadsheet, dan catatan kertas.",
   },
   {
     icon: Package,
-    title: "Inventory Doesn't Match",
+    title: "Jadwal Sering Bentrok",
     description:
-      "Stock numbers rarely reflect what's actually on the shelf.",
+      "Slot atau meja yang sama bisa dipesan dua kali karena tidak ada pengecekan otomatis.",
   },
   {
     icon: Users,
-    title: "Duplicate Data Entry",
+    title: "Input Data Berulang",
     description:
-      "The same information gets entered multiple times by different people.",
+      "Informasi pelanggan yang sama harus diketik ulang oleh orang berbeda di tempat berbeda.",
   },
   {
     icon: Clock3,
-    title: "Slow Reporting",
+    title: "Rekap Lambat",
     description:
-      "Managers wait days for reports that should take seconds.",
+      "Butuh waktu lama untuk tahu berapa booking masuk hari ini, padahal seharusnya instan.",
   },
   {
     icon: TriangleAlert,
-    title: "Too Many Small Mistakes",
+    title: "Kesalahan Kecil yang Berdampak Besar",
     description:
-      "Tiny human errors become expensive business problems.",
+      "Salah catat tanggal atau jam booking bisa bikin pelanggan kecewa.",
   },
 ];
 
@@ -81,15 +81,16 @@ export default function UnderstandingYourBusiness() {
           variants={headingVariants}
         >
           <span className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]">
-            Understanding Your Business
+            Memahami Bisnis Anda
           </span>
           <h2 className="mt-2 font-heading text-3xl font-bold text-white md:text-4xl">
-            Does Any of This Sound Familiar?
+            Apakah Ini Terasa Familiar?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-            Many businesses don&apos;t need more software. They need fewer
-            manual processes, clearer information, and systems that actually
-            work the way their team works.
+            Banyak bisnis berbasis reservasi sebenarnya tidak butuh lebih
+            banyak aplikasi. Mereka butuh sistem booking yang anti bentrok,
+            catatan yang jelas, dan alur kerja yang sesuai cara tim Anda
+            menerima pemesanan.
           </p>
         </motion.div>
 
@@ -125,16 +126,16 @@ export default function UnderstandingYourBusiness() {
           variants={fadeUp}
         >
           <p className="text-lg text-gray-300 md:text-xl">
-            If even one of these feels familiar,
+            Kalau salah satu dari ini terasa familiar,
           </p>
           <p className="mt-2 text-lg text-gray-300 md:text-xl">
-            your business probably doesn&apos;t need another generic
-            application.
+            bisnis Anda mungkin tidak butuh aplikasi generik lainnya.
           </p>
           <p className="mt-2 text-lg text-gray-300 md:text-xl">
-            It needs{" "}
+            Yang dibutuhkan adalah{" "}
             <span className="text-[#6BB8D4]">
-              software designed around the way your business actually works.
+              sistem booking yang dirancang sesuai cara bisnis Anda benar-benar
+              berjalan.
             </span>
           </p>
         </motion.div>

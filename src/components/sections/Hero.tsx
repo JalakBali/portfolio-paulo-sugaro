@@ -108,41 +108,42 @@ export default function Hero() {
             variants={fadeInLeft}
             className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]"
           >
-            Custom Software &amp; Business Automation
+            Sistem Booking &amp; Reservasi Online
           </motion.span>
 
           <motion.h1
             variants={fadeInLeft}
             className="mt-3 font-heading text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl"
           >
-            Software That Fits
+            Jasa Bikin Sistem Booking &amp; Reservasi Online
             <br className="hidden sm:block" />{" "}
-            <span className="text-[#6BB8D4]">Your Business.</span>
+            <span className="text-[#6BB8D4]">Anti Bentrok Jadwal, Anti Ribet.</span>
           </motion.h1>
 
           <motion.p
             variants={fadeInLeft}
             className="mx-auto mt-6 max-w-xl text-base text-gray-300 md:mx-0 md:text-lg"
           >
-            We build software that adapts to your business—not the other way
-            around.
+            Saya bangun sistem booking custom yang mengikuti alur bisnis
+            Anda—bukan sebaliknya.
           </motion.p>
 
           <motion.p
             variants={fadeInLeft}
             className="mx-auto mt-3 max-w-xl text-sm text-gray-400 md:mx-0"
           >
-            We design custom software for businesses that need more than
-            off-the-shelf solutions. Every system is built around the way your
-            team already works—so it fits your process, not the other way
-            around.
+            Cocok untuk bisnis berbasis reservasi—booking meja, lapangan,
+            kendaraan, sampai jasa reservasi lainnya. Setiap sistem dirancang
+            supaya jadwal tidak bentrok, konfirmasi berjalan otomatis, dan tim
+            Anda tidak perlu lagi catat manual di WhatsApp atau buku.
           </motion.p>
 
           <motion.p
             variants={fadeInLeft}
             className="mx-auto mt-3 max-w-xl text-sm text-[#6BB8D4]/80 md:mx-0"
           >
-            Based in Bali. Working with businesses locally and internationally.
+            Berbasis di Bali. Melayani klien lokal maupun internasional secara
+            remote.
           </motion.p>
 
           <motion.div
@@ -163,7 +164,7 @@ export default function Hero() {
               href="/#contact"
               className="rounded-full border-2 border-[#6BB8D4]/60 px-7 py-3 text-sm font-medium text-[#6BB8D4] transition-colors hover:border-[#6BB8D4] hover:bg-[#6BB8D4]/10"
             >
-              Let&apos;s Talk
+              Diskusikan Proyek Anda
             </Link>
           </motion.div>
         </motion.div>

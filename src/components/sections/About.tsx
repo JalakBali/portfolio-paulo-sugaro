@@ -7,20 +7,20 @@ import { Search, Hammer, TrendingUp } from "lucide-react";
 const principles = [
   {
     icon: Search,
-    title: "Understand First",
-    description: "Every project begins by learning how your business actually works.",
+    title: "Pahami Dulu",
+    description: "Setiap project dimulai dengan mempelajari cara bisnis Anda benar-benar berjalan.",
   },
   {
     icon: Hammer,
-    title: "Build Carefully",
+    title: "Bangun dengan Cermat",
     description:
-      "Every workflow is designed deliberately—not copied from generic templates.",
+      "Setiap alur kerja dirancang dengan sengaja—bukan disalin dari template generik.",
   },
   {
     icon: TrendingUp,
-    title: "Improve Continuously",
+    title: "Sempurnakan Terus-Menerus",
     description:
-      "Software evolves together with your business instead of becoming outdated.",
+      "Software berkembang bersama bisnis Anda, bukan malah jadi usang.",
   },
 ];
 
@@ -87,34 +87,34 @@ export default function About() {
             variants={fadeUp}
             className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]"
           >
-            About Paulo Sugaro
+            Tentang Paulo Sugaro
           </motion.span>
 
           <motion.h2
             variants={fadeUp}
             className="font-heading text-3xl font-bold text-white md:text-4xl"
           >
-            Software Should Adapt to People
-            &mdash; Not the Other Way Around.
+            Software Harus Menyesuaikan Manusia
+            &mdash; Bukan Sebaliknya.
           </motion.h2>
 
           <motion.div variants={staggerContainer} className="flex flex-col gap-6">
             <motion.p variants={fadeUp} className="leading-relaxed text-gray-300">
-              I believe good software starts with understanding how people
-              actually work &mdash; not the other way around. Too often, teams
-              are forced to bend their workflow to fit a system that was never
-              built with them in mind.
+              Saya percaya software yang baik dimulai dari memahami cara orang
+              benar-benar bekerja &mdash; bukan sebaliknya. Terlalu sering, tim
+              dipaksa mengubah alur kerja mereka supaya cocok dengan sistem
+              yang sejak awal tidak dirancang untuk mereka.
             </motion.p>
 
             <motion.p variants={fadeUp} className="leading-relaxed text-gray-300">
-              My approach is the opposite: understand the process first, then
-              design software around it &mdash; not the other way around.
+              Pendekatan saya sebaliknya: pahami dulu prosesnya, baru rancang
+              software di sekitarnya &mdash; bukan kebalikannya.
             </motion.p>
 
             <motion.p variants={fadeUp} className="leading-relaxed text-gray-300">
-              Because the goal isn&rsquo;t just to build software.
-              It&rsquo;s to help people work with more clarity, less
-              repetition, and better information.
+              Karena tujuannya bukan sekadar membangun software.
+              Tapi membantu orang bekerja dengan lebih jelas, lebih sedikit
+              pekerjaan berulang, dan informasi yang lebih baik.
             </motion.p>
           </motion.div>
 

@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
     body = await request.json();
   } catch {
     return NextResponse.json(
-      { success: false, message: "Invalid request." },
+      { success: false, message: "Permintaan tidak valid." },
       { status: 400 }
     );
   }
@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        message: "Too many requests. Please try again in a few minutes.",
+        message: "Terlalu banyak permintaan. Silakan coba lagi dalam beberapa menit.",
       },
       { status: 429 }
     );
@@ -89,14 +89,14 @@ export async function POST(request: NextRequest) {
 
   if (!name?.trim() || !email?.trim() || !message?.trim()) {
     return NextResponse.json(
-      { success: false, message: "Name, email, and message are required." },
+      { success: false, message: "Nama, email, dan pesan wajib diisi." },
       { status: 400 }
     );
   }
 
   if (!EMAIL_REGEX.test(email.trim())) {
     return NextResponse.json(
-      { success: false, message: "Please enter a valid email address." },
+      { success: false, message: "Masukkan alamat email yang valid." },
       { status: 400 }
     );
   }
@@ -129,7 +129,7 @@ export async function POST(request: NextRequest) {
       {
         success: false,
         message:
-          "Something went wrong sending your message. Please try again, or email hello@paulosugaro.com directly.",
+          "Terjadi kesalahan saat mengirim pesan Anda. Silakan coba lagi, atau kirim email langsung ke hello@paulosugaro.com.",
       },
       { status: 500 }
     );
