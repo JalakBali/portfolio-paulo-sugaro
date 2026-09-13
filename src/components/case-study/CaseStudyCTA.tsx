@@ -29,13 +29,13 @@ export default function CaseStudyCTA({ projectTitle }: CaseStudyCTAProps) {
           )}
 
           <h2 className="font-heading text-2xl font-bold text-white md:text-3xl">
-            Interested in Building Something Similar?
+            Tertarik Membangun Sistem Serupa?
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-gray-400">
-            If your business has a workflow that feels too manual, too
-            fragmented, or too difficult to manage, we can start with a simple
-            conversation.
+            Kalau bisnis Anda punya masalah booking yang terasa terlalu
+            manual, jadwal sering bentrok, atau sulit dikelola, kita bisa mulai
+            dari obrolan santai dulu.
           </p>
 
           <div className="mt-8 flex justify-center">
@@ -43,7 +43,7 @@ export default function CaseStudyCTA({ projectTitle }: CaseStudyCTAProps) {
               href="mailto:hello@paulosugaro.com"
               className="inline-block rounded-full bg-[#6BB8D4] px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#5aa6c2]"
             >
-              Discuss Your Project
+              Diskusikan Proyek Anda
             </a>
           </div>
         </motion.div>

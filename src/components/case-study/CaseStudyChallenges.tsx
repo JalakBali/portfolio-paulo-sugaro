@@ -34,7 +34,7 @@ export default function CaseStudyChallenges({ challenges }: CaseStudyChallengesP
           className="mb-10 text-center"
         >
           <h2 className="font-heading text-2xl font-bold text-white md:text-3xl">
-            Key Challenges
+            Tantangan Utama
           </h2>
         </motion.div>
 

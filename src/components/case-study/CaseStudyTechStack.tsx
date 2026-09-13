@@ -22,7 +22,7 @@ export default function CaseStudyTechStack({ techStack }: CaseStudyTechStackProp
           variants={fadeUp}
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]">
-            Technology Used
+            Teknologi yang Digunakan
           </p>
 
           <div className="mt-5 flex flex-wrap justify-center gap-2">

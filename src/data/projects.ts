@@ -6,6 +6,8 @@ export interface Project {
   coverImage: string;
   tags: string[];
   featured?: boolean;
+  // Link demo/live project — opsional, ditampilkan di CaseStudyHero & SelectedProjects kalau ada.
+  liveUrl?: string;
 
   overview: {
     label: string;
@@ -31,57 +33,59 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "business-management-platform",
-    title: "Business Management Platform",
-    subtitle: "An integrated system for multi-unit hospitality operations.",
+    slug: "booking-meja-mahjong",
+    title: "Booking Meja Mahjong Online",
+    subtitle:
+      "Sistem reservasi meja mahjong real-time yang anti bentrok jadwal.",
     description:
-      "Built to connect purchasing, warehouse, inventory, accounting, cash and bank, reporting, and business unit operations in one workflow-driven platform.",
-    coverImage: "/images/showcase/dashboard.png",
-    tags: ["Accounting", "Inventory", "Reporting"],
+      "Dibangun untuk tempat bermain mahjong yang sebelumnya mengandalkan booking manual lewat WhatsApp dan buku catatan, sering menyebabkan meja double-booking dan pelanggan kecewa.",
+    coverImage: "/images/projects/mahjong-booking-cover.svg",
+    tags: ["Booking Online", "Reservasi Meja", "Real-time"],
     featured: true,
+    liveUrl: "https://bookmahjong.paulosugaro.com",
 
     overview: {
-      label: "CASE STUDY",
-      heading: "Connecting Operations Into One Business System",
-      body: "A multi-unit business needed a more connected way to manage purchasing, warehouse activities, inventory, accounting, and reporting. The goal was to reduce duplicate work and give teams clearer visibility across daily operations.",
+      label: "STUDI KASUS",
+      heading: "Booking Meja Mahjong Tanpa Bentrok Jadwal",
+      body: "Tempat bermain mahjong ini sebelumnya menerima reservasi lewat chat dan telepon, membuat staf harus mengecek manual apakah meja tersedia. Sistem baru memungkinkan pelanggan booking meja secara online, real-time, tanpa risiko dua pelanggan mendapat meja yang sama di jam yang sama.",
     },
 
     challenges: [
-      "Business data was spread across different workflows and tools.",
-      "Teams needed to reduce repeated manual entry.",
-      "Finance, warehouse, and operations needed clearer visibility.",
-      "Reporting depended on information from multiple areas of the business.",
+      "Reservasi meja masih dicatat manual lewat WhatsApp dan buku, rawan bentrok.",
+      "Staf harus mengecek ketersediaan meja satu per satu secara manual.",
+      "Pelanggan tidak punya cara melihat sendiri jadwal meja yang kosong.",
+      "Tidak ada catatan riwayat booking yang rapi untuk evaluasi bisnis.",
     ],
 
     solutionSections: [
       {
-        title: "Workflow-Driven Platform",
-        body: "The system was designed around how teams actually worked across purchasing, inventory, warehouse, finance, and reporting, instead of forcing every department into a generic process.",
-        image: "/images/showcase/dashboard.png",
+        title: "Kalender Ketersediaan Real-time",
+        body: "Pelanggan bisa langsung melihat meja mana yang kosong di jam berapa, tanpa perlu bertanya ke staf. Sistem otomatis mengunci slot begitu booking dikonfirmasi, sehingga tidak ada dua pelanggan yang bisa mendapat meja yang sama.",
+        image: "/images/projects/mahjong-booking-calendar.svg",
       },
       {
-        title: "Connected Operational Data",
-        body: "Transactions and operational activities were structured so that information could move more naturally between business areas, reducing repeated input and improving visibility.",
-        image: "/images/showcase/master-item.png",
+        title: "Konfirmasi Booking Otomatis",
+        body: "Setiap reservasi baru langsung tercatat dan terkonfirmasi tanpa perlu staf mengecek manual, mengurangi waktu tunggu pelanggan dan beban kerja tim di jam sibuk.",
+        image: "/images/projects/mahjong-booking-confirmation.svg",
       },
     ],
 
     results: [
       {
-        title: "Clearer Operational Workflow",
-        description: "A clearer operational workflow across departments.",
+        title: "Nol Booking Bentrok",
+        description: "Tidak ada lagi dua pelanggan mendapat meja yang sama di jam yang sama.",
       },
       {
-        title: "Less Duplicate Entry",
-        description: "Less duplicate data entry between teams.",
+        title: "Booking 24 Jam",
+        description: "Pelanggan bisa reservasi kapan saja tanpa menunggu staf membalas chat.",
       },
       {
-        title: "Better Visibility",
-        description: "Better visibility for management.",
+        title: "Beban Kerja Staf Berkurang",
+        description: "Staf tidak perlu lagi mengecek ketersediaan meja secara manual.",
       },
       {
-        title: "Foundation for Growth",
-        description: "A stronger foundation for future system expansion.",
+        title: "Riwayat Booking Tercatat Rapi",
+        description: "Semua reservasi tersimpan otomatis untuk kebutuhan evaluasi bisnis.",
       },
     ],
 
@@ -89,119 +93,66 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "cash-bank-workflow-system",
-    title: "Cash & Bank Workflow System",
-    subtitle: "A faster way to review, classify, and manage financial transactions.",
+    // PLACEHOLDER — link demo belum ditemukan (catatan pemilik: "akan diisi
+    // setelah ketemu catatannya"). Field `liveUrl` sengaja tidak diisi supaya
+    // tidak menampilkan link mati ke pengunjung. Begitu link ditemukan,
+    // tambahkan `liveUrl: "https://..."` di sini — lihat juga
+    // FREELANCE-BRANCH-CHECKLIST.md.
+    slug: "booking-cuci-motor-mobil",
+    title: "Booking Cuci Motor & Mobil Online",
+    subtitle: "MVP reservasi jadwal cuci kendaraan tanpa antre di tempat.",
     description:
-      "Designed to help finance teams handle daily cash and bank transactions, review COA, reduce duplicate entry, and keep reports more accurate.",
-    coverImage: "/images/showcase/kas-bank.png",
-    tags: ["Cash & Bank", "COA Review", "Automation"],
+      "MVP booking pribadi untuk usaha cuci kendaraan, memungkinkan pelanggan memilih jenis kendaraan, layanan, dan slot waktu cuci secara online tanpa perlu datang lebih dulu untuk antre.",
+    coverImage: "/images/projects/cuci-motor-cover.svg",
+    tags: ["Booking Online", "MVP", "Reservasi Slot"],
     featured: true,
 
     overview: {
-      label: "CASE STUDY",
-      heading: "Helping Finance Teams Work Faster and More Accurately",
-      body: "Finance teams often work with high transaction volume and need quick ways to review, classify, and validate entries. This workflow was designed to support speed without sacrificing accuracy.",
+      label: "STUDI KASUS",
+      heading: "MVP Booking Cuci Kendaraan Tanpa Antre",
+      body: "Usaha cuci motor dan mobil pada umumnya masih mengandalkan sistem antre di tempat, membuat pelanggan menunggu tanpa kepastian waktu. Project ini dibangun sebagai MVP untuk menguji sistem booking slot cuci kendaraan secara online, dari pemilihan jenis kendaraan sampai konfirmasi jadwal.",
     },
 
     challenges: [
-      "Finance users handled many daily transactions.",
-      "Manual review could slow down reporting.",
-      "Classification needed to remain consistent.",
-      "The team needed a faster input workflow.",
+      "Pelanggan harus datang dan menunggu tanpa tahu estimasi waktu.",
+      "Tidak ada cara reservasi slot cuci dari jarak jauh.",
+      "Jadwal antrean sulit dikelola saat ramai, rawan penumpukan.",
+      "Tidak ada catatan riwayat pelanggan untuk layanan berulang.",
     ],
 
     solutionSections: [
       {
-        title: "Spreadsheet-Style Review",
-        body: "A review workflow was created to support fast, keyboard-friendly work patterns for finance users who were used to spreadsheet-style input.",
-        image: "/images/showcase/review-coa.png",
+        title: "Pilih Slot Cuci Sesuai Jenis Kendaraan",
+        body: "Pelanggan memilih jenis kendaraan (motor/mobil), jenis layanan, dan slot waktu yang tersedia langsung dari HP, tanpa perlu datang dulu untuk antre.",
+        image: "/images/projects/cuci-motor-booking-form.svg",
       },
       {
-        title: "Cash & Bank Visibility",
-        body: "Cash and bank transactions were organized into a clearer interface so teams could review, classify, and manage financial data more efficiently.",
-        image: "/images/showcase/kas-bank.png",
+        title: "Manajemen Antrean untuk Staf",
+        body: "Staf bisa melihat jadwal booking hari itu dalam satu tampilan, sehingga antrean lebih teratur dan tidak ada slot yang terlewat atau bentrok.",
+        image: "/images/projects/cuci-motor-queue.svg",
       },
     ],
 
     results: [
       {
-        title: "Faster Review Workflow",
-        description: "Faster review workflow for finance users.",
+        title: "Booking Tanpa Antre di Tempat",
+        description: "Pelanggan tahu jadwalnya sebelum datang, tidak perlu menunggu di lokasi.",
       },
       {
-        title: "Reduced Friction",
-        description: "Reduced friction compared with form-only input.",
+        title: "Antrean Lebih Teratur",
+        description: "Staf punya gambaran jelas jadwal cuci sepanjang hari.",
       },
       {
-        title: "Clearer Visibility",
-        description: "Clearer transaction visibility.",
+        title: "Anti Bentrok Slot",
+        description: "Sistem mencegah dua kendaraan dijadwalkan di slot cuci yang sama.",
       },
       {
-        title: "Accurate Reporting",
-        description: "Better support for accurate reporting.",
+        title: "Basis untuk Pengembangan Lanjutan",
+        description: "MVP ini jadi fondasi untuk fitur langganan cuci rutin & program pelanggan setia.",
       },
     ],
 
-    techStack: ["Google Apps Script", "Google Sheets", "Next.js", "React"],
-  },
-
-  {
-    slug: "inventory-stock-operations",
-    title: "Inventory & Stock Operations",
-    subtitle: "A practical workflow for requests, stock movement, and warehouse control.",
-    description:
-      "Built around real warehouse operations, from stock requests and goods issue to transfers, stock opname, and item master management.",
-    coverImage: "/images/showcase/stock-request.png",
-    tags: ["Stock Request", "Warehouse", "Inventory"],
-    featured: true,
-
-    overview: {
-      label: "CASE STUDY",
-      heading: "Building Inventory Workflows Around Real Warehouse Operations",
-      body: "Warehouse and inventory work needs clear movement, requests, transfers, and stock validation. This system was designed to support daily stock operations while keeping the workflow practical for the team.",
-    },
-
-    challenges: [
-      "Stock movement needed better visibility.",
-      "Requests, transfers, and usage had to be tracked clearly.",
-      "Inventory records needed to stay aligned with daily operations.",
-      "The system had to remain practical for warehouse users.",
-    ],
-
-    solutionSections: [
-      {
-        title: "Stock Request Workflow",
-        body: "The system supports request-based stock movement so teams can better control what is requested, issued, and recorded.",
-        image: "/images/showcase/stock-request.png",
-      },
-      {
-        title: "Inventory Control Foundation",
-        body: "Item master and stock-related workflows create a foundation for clearer inventory tracking and future operational reporting.",
-        image: "/images/showcase/master-item.png",
-      },
-    ],
-
-    results: [
-      {
-        title: "Clearer Stock Tracking",
-        description: "Clearer stock request and movement tracking.",
-      },
-      {
-        title: "Better Structure",
-        description: "Better structure for warehouse operations.",
-      },
-      {
-        title: "Improved Visibility",
-        description: "Improved visibility over inventory-related activity.",
-      },
-      {
-        title: "Reporting Foundation",
-        description: "A stronger foundation for stock reporting.",
-      },
-    ],
-
-    techStack: ["Next.js", "React", "Supabase", "PostgreSQL", "Vercel"],
+    techStack: ["Next.js", "React", "Supabase", "Vercel"],
   },
 ];
 

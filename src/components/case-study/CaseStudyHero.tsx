@@ -69,6 +69,19 @@ export default function CaseStudyHero({ project }: CaseStudyHeroProps) {
               </span>
             ))}
           </motion.div>
+
+          {project.liveUrl && (
+            <motion.div variants={fadeUp} className="mt-6 flex justify-center">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-[#6BB8D4]/60 px-6 py-2.5 text-sm font-medium text-[#6BB8D4] transition-colors hover:border-[#6BB8D4] hover:bg-[#6BB8D4]/10"
+              >
+                Lihat Demo Live ↗
+              </a>
+            </motion.div>
+          )}
         </motion.div>
 
         <motion.div
@@ -82,6 +95,7 @@ export default function CaseStudyHero({ project }: CaseStudyHeroProps) {
             alt={`${project.title} cover`}
             fill
             priority
+            unoptimized
             sizes="(min-width: 1024px) 1024px, 100vw"
             className="object-cover object-top"
           />

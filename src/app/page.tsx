@@ -16,8 +16,7 @@ export default function Home() {
       <BusinessDifferently />
       <UnderstandingYourBusiness />
       <OurApproach />
-      {/* HIDDEN 12 Sep 2026 — SelectedProjects section disembunyikan sementara, lihat PROJECT-INSTRUCTIONS.md */}
-      {/* <SelectedProjects /> */}
+      <SelectedProjects />
       {/* HIDDEN 2 Agu 2026 — Solutions section disembunyikan sementara, lihat PROJECT-INSTRUCTIONS.md */}
       {/* <Solutions /> */}
       <WhyWorkWithMe />

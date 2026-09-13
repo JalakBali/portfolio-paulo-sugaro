@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+  <!-- PLACEHOLDER MOCKUP — ganti dengan screenshot asli setelah case study siap -->
+  <rect width="480" height="300" fill="#1F2937"/>
+
+  <circle cx="240" cy="105" r="36" fill="#6BB8D4" fill-opacity="0.15"/>
+  <g stroke="#6BB8D4" stroke-width="3" stroke-linecap="round">
+    <line x1="220" y1="94" x2="260" y2="94"/>
+    <line x1="220" y1="105" x2="260" y2="105"/>
+    <line x1="220" y1="116" x2="248" y2="116"/>
+  </g>
+
+  <text x="240" y="175" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="600" fill="#F9FAFB">Manajemen Antrean</text>
+
+  <rect x="170" y="202" width="140" height="8" rx="4" fill="#374151"/>
+  <rect x="190" y="220" width="100" height="8" rx="4" fill="#374151"/>
+</svg>

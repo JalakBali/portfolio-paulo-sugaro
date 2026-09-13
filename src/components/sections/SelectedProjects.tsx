@@ -3,39 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
+import { getFeaturedProjects } from "@/data/projects";
 
-const projects = [
-  {
-    slug: "business-management-platform",
-    title: "Business Management Platform",
-    subtitle: "An integrated system for multi-unit hospitality operations.",
-    description:
-      "Built to connect purchasing, warehouse, inventory, accounting, cash and bank, reporting, and business unit operations in one workflow-driven platform.",
-    image: "/images/showcase/dashboard.png",
-    tags: ["Accounting", "Inventory", "Reporting"],
-    featured: true,
-  },
-  {
-    slug: "cash-bank-workflow-system",
-    title: "Cash & Bank Workflow System",
-    subtitle:
-      "A faster way to review, classify, and manage financial transactions.",
-    description:
-      "Designed to help finance teams handle daily cash and bank transactions, review COA, reduce duplicate entry, and keep reports more accurate.",
-    image: "/images/showcase/kas-bank.png",
-    tags: ["Cash & Bank", "COA Review", "Automation"],
-  },
-  {
-    slug: "inventory-stock-operations",
-    title: "Inventory & Stock Operations",
-    subtitle:
-      "A practical workflow for requests, stock movement, and warehouse control.",
-    description:
-      "Built around real warehouse operations, from stock requests and goods issue to transfers, stock opname, and item master management.",
-    image: "/images/showcase/stock-request.png",
-    tags: ["Stock Request", "Warehouse", "Inventory"],
-  },
-];
+const projects = getFeaturedProjects();
 
 const headingVariants: Variants = {
   hidden: { y: -24, opacity: 0 },
@@ -64,15 +34,14 @@ export default function SelectedProjects() {
           variants={headingVariants}
         >
           <span className="text-sm font-semibold uppercase tracking-widest text-[#6BB8D4]">
-            Selected Projects
+            Proyek Terpilih
           </span>
           <h2 className="mt-2 font-heading text-3xl font-bold text-white md:text-4xl">
-            Real Systems Built Around Real Business Workflows
+            Sistem Booking Nyata untuk Kebutuhan Nyata
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-            A selection of custom business systems designed to connect
-            operations, reduce manual work, and give teams clearer visibility
-            across their daily processes.
+            Beberapa sistem booking yang sudah dibangun untuk membantu bisnis
+            mengelola reservasi tanpa bentrok jadwal dan tanpa ribet.
           </p>
         </motion.div>
 
@@ -83,104 +52,90 @@ export default function SelectedProjects() {
           viewport={{ once: true }}
           variants={staggerGrid}
         >
-          {projects.map(({ slug, title, subtitle, description, image, tags, featured }) => (
-            <motion.div
-              key={title}
-              variants={cardVariants}
-              className={`group overflow-hidden rounded-xl border border-gray-700/50 bg-[#1F2937] shadow-[0_20px_40px_-20px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 hover:border-[#6BB8D4]/50 hover:shadow-lg hover:shadow-black/30 ${
-                featured ? "lg:col-span-2" : ""
-              }`}
-            >
-              <div
-                className={
-                  featured ? "lg:grid lg:grid-cols-[11fr_9fr] lg:items-stretch" : ""
-                }
+          {projects.map(
+            ({ slug, title, subtitle, description, coverImage, tags, featured, liveUrl }) => (
+              <motion.div
+                key={slug}
+                variants={cardVariants}
+                className={`group overflow-hidden rounded-xl border border-gray-700/50 bg-[#1F2937] shadow-[0_20px_40px_-20px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 hover:border-[#6BB8D4]/50 hover:shadow-lg hover:shadow-black/30 ${
+                  featured ? "lg:col-span-2" : ""
+                }`}
               >
                 <div
-                  className={`relative aspect-video overflow-hidden ${
-                    featured ? "lg:order-2 lg:aspect-auto lg:min-h-[320px]" : ""
-                  }`}
+                  className={
+                    featured ? "lg:grid lg:grid-cols-[11fr_9fr] lg:items-stretch" : ""
+                  }
                 >
-                  <Image
-                    src={image}
-                    alt={`${title} screenshot`}
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1F2937]/40 to-transparent" />
-                </div>
-                <div
-                  className={`flex flex-col justify-center p-6 lg:p-8 ${
-                    featured ? "lg:order-1" : ""
-                  }`}
-                >
-                  <h3
-                    className={`font-heading font-semibold text-white ${
-                      featured ? "text-2xl lg:text-3xl" : "text-lg lg:text-xl"
+                  <div
+                    className={`relative aspect-video overflow-hidden ${
+                      featured ? "lg:order-2 lg:aspect-auto lg:min-h-[320px]" : ""
                     }`}
                   >
-                    {title}
-                  </h3>
-                  <p
-                    className={`mt-1 text-[#6BB8D4] ${
-                      featured ? "text-base lg:text-lg" : "text-sm"
-                    }`}
-                  >
-                    {subtitle}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-400">
-                    {description}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-gray-700/50 bg-gray-800/50 px-3 py-1 text-xs text-gray-300"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    <Image
+                      src={coverImage}
+                      alt={`${title} screenshot`}
+                      fill
+                      unoptimized
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1F2937]/40 to-transparent" />
                   </div>
-                  <Link
-                    href={`/projects/${slug}`}
-                    className="mt-5 inline-flex w-fit items-center text-sm font-medium text-[#6BB8D4] transition-transform duration-200 hover:translate-x-0.5 hover:underline"
+                  <div
+                    className={`flex flex-col justify-center p-6 lg:p-8 ${
+                      featured ? "lg:order-1" : ""
+                    }`}
                   >
-                    View Case Study →
-                  </Link>
+                    <h3
+                      className={`font-heading font-semibold text-white ${
+                        featured ? "text-2xl lg:text-3xl" : "text-lg lg:text-xl"
+                      }`}
+                    >
+                      {title}
+                    </h3>
+                    <p
+                      className={`mt-1 text-[#6BB8D4] ${
+                        featured ? "text-base lg:text-lg" : "text-sm"
+                      }`}
+                    >
+                      {subtitle}
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                      {description}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-gray-700/50 bg-gray-800/50 px-3 py-1 text-xs text-gray-300"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2">
+                      <Link
+                        href={`/projects/${slug}`}
+                        className="inline-flex w-fit items-center text-sm font-medium text-[#6BB8D4] transition-transform duration-200 hover:translate-x-0.5 hover:underline"
+                      >
+                        Lihat Studi Kasus →
+                      </Link>
+                      {liveUrl && (
+                        <a
+                          href={liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex w-fit items-center text-sm font-medium text-gray-300 transition-transform duration-200 hover:translate-x-0.5 hover:text-white hover:underline"
+                        >
+                          Lihat Demo Live ↗
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          className="mt-6 flex flex-col items-start gap-2 rounded-xl border border-gray-700/50 bg-[#1F2937]/60 p-5 sm:flex-row sm:items-center sm:justify-between"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={cardVariants}
-        >
-          <div>
-            <span className="inline-block rounded-full border border-gray-700/50 bg-gray-800/50 px-2.5 py-0.5 text-[11px] uppercase tracking-wide text-gray-400">
-              Live Project
-            </span>
-            <h3 className="mt-2 font-heading text-base font-semibold text-white">
-              Hioe Mahjong Academy
-            </h3>
-            <p className="mt-1 text-sm text-gray-400">
-              An interactive learning platform for learning mahjong through
-              lessons and hands-on practice.
-            </p>
-          </div>
-          <a
-            href="https://mahjong.paulosugaro.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-fit shrink-0 items-center text-sm font-medium text-[#6BB8D4] transition-transform duration-200 hover:translate-x-0.5 hover:underline"
-          >
-            Visit Live Project ↗
-          </a>
+              </motion.div>
+            )
+          )}
         </motion.div>
       </div>
     </section>

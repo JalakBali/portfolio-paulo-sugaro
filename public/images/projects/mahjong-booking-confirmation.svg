@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+  <!-- PLACEHOLDER MOCKUP — ganti dengan screenshot asli setelah case study siap -->
+  <rect width="480" height="300" fill="#1F2937"/>
+
+  <circle cx="240" cy="110" r="36" fill="#6BB8D4" fill-opacity="0.18"/>
+  <path d="M 222 110 L 235 123 L 260 96" fill="none" stroke="#6BB8D4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="240" y="175" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="600" fill="#F9FAFB">Konfirmasi Otomatis</text>
+
+  <rect x="170" y="202" width="140" height="8" rx="4" fill="#374151"/>
+  <rect x="150" y="228" width="90" height="20" rx="10" fill="#6BB8D4"/>
+  <text x="195" y="242" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#0d1520">Terkonfirmasi</text>
+</svg>

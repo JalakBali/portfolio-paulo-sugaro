@@ -35,7 +35,7 @@ export default function CaseStudyResults({ results }: CaseStudyResultsProps) {
           className="mb-10 text-center"
         >
           <h2 className="font-heading text-2xl font-bold text-white md:text-3xl">
-            What Improved
+            Hasil yang Dicapai
           </h2>
         </motion.div>
 

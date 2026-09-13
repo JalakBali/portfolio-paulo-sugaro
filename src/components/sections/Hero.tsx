@@ -29,11 +29,12 @@ const fadeInRight: Variants = {
   },
 };
 
-// Placeholder paths — drop the real images into public/images/showcase/
+// PLACEHOLDER — mockup booking bertema kalender/slot, ganti dengan screenshot
+// asli setelah case study siap. Lihat FREELANCE-BRANCH-CHECKLIST.md.
 const SHOWCASE = {
-  main: "/images/showcase/dashboard.png",
-  card1: "/images/showcase/kas-bank.png",
-  card2: "/images/showcase/stock-request.png",
+  main: "/images/showcase/booking-calendar-main.svg",
+  card1: "/images/showcase/booking-today-schedule.svg",
+  card2: "/images/showcase/booking-confirmed.svg",
 } as const;
 
 function ScreenshotCard({
@@ -73,6 +74,7 @@ function ScreenshotCard({
           alt={alt}
           width={imgWidth}
           height={imgHeight}
+          unoptimized
           className="block w-full object-cover"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0d1117]/30 to-transparent" />
@@ -150,16 +152,12 @@ export default function Hero() {
             variants={fadeInLeft}
             className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:justify-start"
           >
-            {/* HIDDEN 12 Sep 2026 — "View Projects" disembunyikan sementara karena target
-                section (/#projects) tidak dirender selama SelectedProjects di-hide.
-                Untuk restore: uncomment bersamaan dengan <SelectedProjects /> di
-                src/app/page.tsx, lihat PROJECT-INSTRUCTIONS.md */}
-            {/* <Link
+            <Link
               href="/#projects"
               className="rounded-full bg-[#6BB8D4] px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              View Projects
-            </Link> */}
+              Lihat Studi Kasus
+            </Link>
             <Link
               href="/#contact"
               className="rounded-full border-2 border-[#6BB8D4]/60 px-7 py-3 text-sm font-medium text-[#6BB8D4] transition-colors hover:border-[#6BB8D4] hover:bg-[#6BB8D4]/10"
@@ -188,8 +186,8 @@ export default function Hero() {
             <div className="relative z-10 -rotate-2 shadow-[0_24px_64px_-8px_rgba(0,0,0,0.65),0_8px_24px_-4px_rgba(0,0,0,0.4),0_0_40px_-8px_rgba(107,184,212,0.18)]">
               <ScreenshotCard
                 src={SHOWCASE.main}
-                alt="Business dashboard overview"
-                label="Dashboard — Overview"
+                alt="Booking calendar overview"
+                label="Booking — Ringkasan"
                 imgWidth={790}
                 imgHeight={494}
               />
@@ -208,7 +206,7 @@ export default function Hero() {
             >
               <ScreenshotCard
                 src={SHOWCASE.card1}
-                alt="Bank reconciliation module"
+                alt="Today's booking schedule"
                 imgWidth={280}
                 imgHeight={175}
                 shadowClass="shadow-[0_16px_40px_-6px_rgba(0,0,0,0.6),0_4px_16px_-4px_rgba(0,0,0,0.35)]"
@@ -228,7 +226,7 @@ export default function Hero() {
             >
               <ScreenshotCard
                 src={SHOWCASE.card2}
-                alt="Stock request module"
+                alt="Booking confirmation notification"
                 imgWidth={260}
                 imgHeight={163}
                 shadowClass="shadow-[0_16px_40px_-6px_rgba(0,0,0,0.6),0_4px_16px_-4px_rgba(0,0,0,0.35)]"

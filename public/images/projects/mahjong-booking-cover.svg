@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <!-- PLACEHOLDER MOCKUP — ganti dengan screenshot asli setelah case study siap -->
+  <rect width="960" height="540" fill="#1F2937"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="200" height="540" fill="#161d29"/>
+  <circle cx="28" cy="32" r="7" fill="#6BB8D4"/>
+  <text x="46" y="38" font-family="sans-serif" font-size="16" font-weight="700" fill="#F9FAFB">Mahjong Booking</text>
+
+  <rect x="16" y="80" width="168" height="34" rx="8" fill="#263241"/>
+  <text x="30" y="102" font-family="sans-serif" font-size="12" fill="#6BB8D4">Ringkasan</text>
+  <text x="30" y="144" font-family="sans-serif" font-size="12" fill="#9CA3AF">Booking Meja</text>
+  <text x="30" y="186" font-family="sans-serif" font-size="12" fill="#9CA3AF">Jadwal</text>
+  <text x="30" y="228" font-family="sans-serif" font-size="12" fill="#9CA3AF">Anggota</text>
+  <text x="30" y="270" font-family="sans-serif" font-size="12" fill="#9CA3AF">Laporan</text>
+
+  <!-- Header -->
+  <text x="224" y="44" font-family="sans-serif" font-size="20" font-weight="700" fill="#F9FAFB">Ketersediaan Meja Hari Ini</text>
+  <rect x="860" y="24" width="76" height="30" rx="15" fill="#111827" stroke="#374151"/>
+  <text x="898" y="43" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#9CA3AF">Hari Ini</text>
+
+  <!-- Stat cards -->
+  <g font-family="sans-serif">
+    <rect x="224" y="76" width="166" height="70" rx="10" fill="#111827" stroke="#374151"/>
+    <text x="238" y="100" font-size="11" fill="#9CA3AF">Meja Terisi Hari Ini</text>
+    <text x="238" y="126" font-size="22" font-weight="700" fill="#F9FAFB">9</text>
+
+    <rect x="406" y="76" width="166" height="70" rx="10" fill="#111827" stroke="#374151"/>
+    <text x="420" y="100" font-size="11" fill="#9CA3AF">Menunggu Konfirmasi</text>
+    <text x="420" y="126" font-size="22" font-weight="700" fill="#D4A853">3</text>
+
+    <rect x="588" y="76" width="166" height="70" rx="10" fill="#111827" stroke="#374151"/>
+    <text x="602" y="100" font-size="11" fill="#9CA3AF">Meja Tersedia</text>
+    <text x="602" y="126" font-size="22" font-weight="700" fill="#F9FAFB">6</text>
+
+    <rect x="770" y="76" width="166" height="70" rx="10" fill="#111827" stroke="#374151"/>
+    <text x="784" y="100" font-size="11" fill="#9CA3AF">Okupansi</text>
+    <text x="784" y="126" font-size="22" font-weight="700" fill="#F9FAFB">60%</text>
+  </g>
+
+  <!-- Table grid -->
+  <text x="224" y="176" font-family="sans-serif" font-size="14" font-weight="600" fill="#6BB8D4">Status Meja — Sesi Sore</text>
+
+  <g font-family="sans-serif" font-size="11" fill="#9CA3AF" text-anchor="middle">
+    <text x="283" y="206">Meja 1</text>
+    <text x="401" y="206">Meja 2</text>
+    <text x="519" y="206">Meja 3</text>
+    <text x="637" y="206">Meja 4</text>
+    <text x="755" y="206">Meja 5</text>
+    <text x="873" y="206">Meja 6</text>
+  </g>
+
+  <g>
+    <g fill="none" stroke="#374151">
+      <rect x="228" y="216" width="110" height="42" rx="8"/>
+      <rect x="228" y="324" width="110" height="42" rx="8"/>
+      <rect x="228" y="378" width="110" height="42" rx="8"/>
+      <rect x="346" y="270" width="110" height="42" rx="8"/>
+      <rect x="346" y="378" width="110" height="42" rx="8"/>
+      <rect x="346" y="432" width="110" height="42" rx="8"/>
+      <rect x="464" y="216" width="110" height="42" rx="8"/>
+      <rect x="464" y="270" width="110" height="42" rx="8"/>
+      <rect x="464" y="324" width="110" height="42" rx="8"/>
+      <rect x="464" y="432" width="110" height="42" rx="8"/>
+      <rect x="582" y="270" width="110" height="42" rx="8"/>
+      <rect x="582" y="324" width="110" height="42" rx="8"/>
+      <rect x="582" y="378" width="110" height="42" rx="8"/>
+      <rect x="700" y="216" width="110" height="42" rx="8"/>
+      <rect x="700" y="270" width="110" height="42" rx="8"/>
+      <rect x="700" y="378" width="110" height="42" rx="8"/>
+      <rect x="700" y="432" width="110" height="42" rx="8"/>
+      <rect x="818" y="270" width="110" height="42" rx="8"/>
+      <rect x="818" y="324" width="110" height="42" rx="8"/>
+      <rect x="818" y="378" width="110" height="42" rx="8"/>
+    </g>
+    <g fill="#6BB8D4" fill-opacity="0.85">
+      <rect x="228" y="270" width="110" height="42" rx="8"/>
+      <rect x="228" y="432" width="110" height="42" rx="8"/>
+      <rect x="346" y="216" width="110" height="42" rx="8"/>
+      <rect x="582" y="216" width="110" height="42" rx="8"/>
+      <rect x="582" y="432" width="110" height="42" rx="8"/>
+      <rect x="700" y="324" width="110" height="42" rx="8"/>
+      <rect x="818" y="216" width="110" height="42" rx="8"/>
+      <rect x="818" y="432" width="110" height="42" rx="8"/>
+    </g>
+    <g fill="#D4A853" fill-opacity="0.85">
+      <rect x="346" y="324" width="110" height="42" rx="8"/>
+      <rect x="464" y="378" width="110" height="42" rx="8"/>
+    </g>
+  </g>
+</svg>
