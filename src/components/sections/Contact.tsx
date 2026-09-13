@@ -4,19 +4,17 @@ import { Mail, MessageCircle } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 import ContactForm from "@/components/sections/ContactForm";
 
+const whatsapp = {
+  value: "+62 811 5727 800",
+  href: "https://wa.me/628115727800",
+};
+
 const contactItems = [
   {
     icon: Mail,
     value: "hello@paulosugaro.com",
     href: "mailto:hello@paulosugaro.com",
   },
-  // HIDDEN 12 Sep 2026 — WhatsApp link disembunyikan sementara,
-  // lihat PROJECT-INSTRUCTIONS.md
-  // {
-  //   icon: MessageCircle,
-  //   value: "+62 811 5727 800",
-  //   href: "https://wa.me/628115727800",
-  // },
 ];
 
 const staggerContainer: Variants = {
@@ -78,7 +76,19 @@ export default function Contact() {
               pressure, just a conversation.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="mt-2 flex flex-col gap-3">
+            <motion.div variants={fadeUp} className="mt-2">
+              <a
+                href={whatsapp.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#6BB8D4] px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              >
+                <MessageCircle size={18} />
+                Chat via WhatsApp &mdash; {whatsapp.value}
+              </a>
+            </motion.div>
+
+            <motion.div variants={fadeUp} className="mt-3 flex flex-col gap-3">
               {contactItems.map(({ icon: Icon, value, href }) => (
                 <a
                   key={value}

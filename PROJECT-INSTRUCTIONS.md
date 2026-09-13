@@ -126,7 +126,7 @@ Urutan render di `src/app/page.tsx`:
 | SelectedProjects | ⏸️ Disembunyikan sementara (12 Sep 2026) — komponen masih ada di kode, tinggal di-uncomment di page.tsx untuk restore (lihat catatan restore di bawah) |
 | Solutions | ⏸️ Disembunyikan sementara (2 Agu 2026) — komponen masih ada di kode, tinggal di-uncomment di page.tsx dan tambahkan lagi link Navbar untuk restore |
 | WhyWorkWithMe | ✅ Selesai |
-| About | ⏸️ Foto disembunyikan sementara (12 Sep 2026), layout jadi 1 kolom — lihat catatan restore di bawah |
+| About | ✅ Selesai — foto & layout 2 kolom di-restore di branch `portfolio-freelance` (14 Sep 2026) |
 | TechStack | ✅ Selesai |
 | Contact | ✅ Selesai (sudah include working contact form via Resend, bukan cuma mailto — lihat bagian "📧 Contact Form & Email" di bawah) |
 | Footer | ✅ Selesai |
@@ -228,17 +228,6 @@ Domain `paulosugaro.com` sudah diverifikasi di Resend (region **Tokyo, ap-northe
   2. Di `src/components/sections/Hero.tsx`, hapus komentar penanda `HIDDEN 12 Sep 2026` dan uncomment tombol `View Projects` (`<Link href="/#projects">`).
   3. Jalankan `npm run build` untuk memastikan tidak ada error.
 
-- **WhatsApp link (Contact)** — disembunyikan dari section Contact 12 Sep 2026. Entry-nya di array `contactItems` (`src/components/sections/Contact.tsx`) di-comment, bukan dihapus. Import `MessageCircle` dari `lucide-react` sengaja dibiarkan meski jadi unused, supaya gampang di-restore tanpa re-import manual.
-- **Cara restore:**
-  1. Di `src/components/sections/Contact.tsx`, hapus komentar penanda `HIDDEN 12 Sep 2026` dan uncomment entry `{ icon: MessageCircle, value: "+62 811 5727 800", href: "https://wa.me/628115727800" }` di array `contactItems`.
-  2. Jalankan `npm run build` untuk memastikan tidak ada error.
+- **WhatsApp link (Contact)** — disembunyikan dari section Contact 12 Sep 2026 di `main`. **Di-restore di branch `portfolio-freelance` (14 Sep 2026)** dan dijadikan CTA utama: dipisah dari array `contactItems` ke konstanta `whatsapp`, dirender sebagai tombol filled (`bg-[#6BB8D4]`, sama seperti pola tombol primer di `Hero.tsx`) di atas daftar link email, sehingga lebih menonjol dibanding form Resend (form tetap ada sebagai opsi kedua). Status di `main` tidak berubah — masih hidden di sana.
 
-- **Foto About** — disembunyikan dari section About 12 Sep 2026. Elemen `<Image src="/images/Paul.png" .../>` (dibungkus `<motion.div variants={fromLeft} ...>`) di-comment, bukan dihapus. Layout section diubah dari grid 2 kolom jadi 1 kolom penuh (teks full-width) supaya foto benar-benar hilang dari layout, bukan cuma disembunyikan visual dengan ruang kosong tersisa.
-- **Struktur original (untuk restore persis):**
-  - Container original: `<div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 px-4 md:grid-cols-[35%_65%]">` (grid 2 kolom di desktop, 35% kolom foto / 65% kolom teks, max-w-6xl).
-  - Container saat ini (disembunyikan): `<div className="mx-auto max-w-3xl px-4">` (1 kolom, max-w-3xl, hanya berisi blok teks).
-  - Elemen foto original persis: `<motion.div variants={fromLeft} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex justify-center md:justify-start"><Image src="/images/Paul.png" alt="Paul, software developer based in Bali" width={480} height={600} className="h-auto w-72 rounded-2xl border border-gray-700/50 object-cover object-top shadow-lg shadow-black/30 sm:w-80 md:w-full" /></motion.div>`.
-- **Cara restore:**
-  1. Di `src/components/sections/About.tsx`, ganti `className` container dari `"mx-auto max-w-3xl px-4"` kembali ke `"mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 px-4 md:grid-cols-[35%_65%]"`.
-  2. Hapus komentar penanda `HIDDEN 12 Sep 2026` dan uncomment blok `<motion.div>` foto (variant `fromLeft`) di atas blok Text, persis seperti struktur original di atas.
-  3. Jalankan `npm run build` untuk memastikan tidak ada error.
+- **Foto About** — disembunyikan dari section About 12 Sep 2026 di `main`. **Di-restore di branch `portfolio-freelance` (14 Sep 2026)**: container kembali ke grid 2 kolom (`mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 px-4 md:grid-cols-[35%_65%]`), blok `<Image src="/images/Paul.png" .../>` di-uncomment persis seperti struktur original. Status di `main` tidak berubah — masih hidden/1 kolom di sana.

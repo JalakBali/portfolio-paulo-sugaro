@@ -57,9 +57,8 @@ const cardVariants: Variants = {
 export default function About() {
   return (
     <section id="about" className="bg-[#1F2937] py-24">
-      <div className="mx-auto max-w-3xl px-4">
-        {/* HIDDEN 12 Sep 2026 — Foto disembunyikan sementara, lihat PROJECT-INSTRUCTIONS.md */}
-        {/* Portrait
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 px-4 md:grid-cols-[35%_65%]">
+        {/* Portrait */}
         <motion.div
           variants={fromLeft}
           initial="hidden"
@@ -74,7 +73,7 @@ export default function About() {
             height={600}
             className="h-auto w-72 rounded-2xl border border-gray-700/50 object-cover object-top shadow-lg shadow-black/30 sm:w-80 md:w-full"
           />
-        </motion.div> */}
+        </motion.div>
 
         {/* Text */}
         <motion.div
