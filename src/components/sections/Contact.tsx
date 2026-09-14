@@ -5,7 +5,6 @@ import { motion, type Variants } from "framer-motion";
 import ContactForm from "@/components/sections/ContactForm";
 
 const whatsapp = {
-  value: "+62 811 5727 800",
   href: "https://wa.me/628115727800",
 };
 
@@ -81,10 +80,10 @@ export default function Contact() {
                 href={whatsapp.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#6BB8D4] px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
+                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
               >
                 <MessageCircle size={18} />
-                Chat Langsung via WhatsApp &mdash; {whatsapp.value}
+                Chat via WhatsApp
               </a>
             </motion.div>
 
