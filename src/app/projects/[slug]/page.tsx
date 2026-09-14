@@ -25,13 +25,13 @@ export async function generateMetadata({
 
   if (!project) {
     return {
-      title: "Project Not Found | Paulo Sugaro",
+      title: "Halaman Tidak Ditemukan | Paulo Sugaro",
     };
   }
 
   return {
-    title: `${project.title} | Paulo Sugaro`,
-    description: project.description,
+    title: `Studi Kasus: ${project.title} | Paulo Sugaro`,
+    description: `${project.subtitle} Jasa bikin sistem booking & reservasi online oleh Paulo Sugaro, developer sistem booking untuk bisnis lokal.`,
     alternates: {
       canonical: `/projects/${slug}`,
     },

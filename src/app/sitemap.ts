@@ -1,12 +1,8 @@
 import type { MetadataRoute } from "next";
-import { getAllProjectSlugs } from "@/data/projects";
 
-const BASE_URL = "https://paulosugaro.com";
-
+// Branch portfolio-freelance: sengaja dikosongkan — situs ini noindex
+// (lihat robots.ts & metadata.robots di layout.tsx), jadi tidak perlu
+// menyarankan URL apapun untuk di-crawl/index.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const projectEntries = getAllProjectSlugs().map((slug) => ({
-    url: `${BASE_URL}/projects/${slug}`,
-  }));
-
-  return [{ url: BASE_URL }, ...projectEntries];
+  return [];
 }

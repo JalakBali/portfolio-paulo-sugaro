@@ -24,26 +24,37 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+// NOTE (branch portfolio-freelance): metadataBase & openGraph.url masih
+// mengarah ke paulosugaro.com karena subdomain khusus branch ini belum
+// ditentukan (Langkah 8). Update ke subdomain final begitu sudah live.
 export const metadata: Metadata = {
   metadataBase: new URL("https://paulosugaro.com"),
-  title: "Paulo Sugaro — Custom Software & Business Automation",
+  title: "Jasa Bikin Sistem Booking & Reservasi Online | Paulo Sugaro",
   description:
-    "Custom software, business automation, internal systems, and web applications for growing businesses in Bali and beyond.",
+    "Jasa bikin sistem booking dan reservasi online custom—anti bentrok jadwal, konfirmasi otomatis. Developer sistem reservasi untuk UMKM dan bisnis lokal.",
   alternates: {
     canonical: "/",
   },
+  // Branch ini khusus dikirim manual lewat proposal/chat (mis. Projects.co.id),
+  // bukan untuk ditemukan lewat pencarian organik.
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: {
-    title: "Paulo Sugaro",
-    description: "Software That Fits Your Business",
+    title: "Paulo Sugaro — Jasa Sistem Booking & Reservasi Online",
+    description:
+      "Sistem booking online yang anti bentrok jadwal, dibangun sesuai alur bisnis Anda.",
     url: "https://paulosugaro.com",
     siteName: "Paulo Sugaro",
-    locale: "en_US",
+    locale: "id_ID",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Paulo Sugaro",
-    description: "Software That Fits Your Business",
+    title: "Paulo Sugaro — Jasa Sistem Booking & Reservasi Online",
+    description:
+      "Sistem booking online yang anti bentrok jadwal, dibangun sesuai alur bisnis Anda.",
   },
   icons: {
     icon: [
@@ -62,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body
