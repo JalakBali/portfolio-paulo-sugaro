@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Plus_Jakarta_Sans, Inter } from "next/font/google";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,15 +24,14 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://paulosugaro.com"),
-  title: "Paulo Sugaro — Custom Software & Business Automation",
-  description:
-    "Custom software, business automation, internal systems, and web applications for growing businesses in Bali and beyond.",
+  title: "Paulo Sugaro",
+  description: "Software Developer — Bali, Indonesia.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Paulo Sugaro",
-    description: "Software That Fits Your Business",
+    description: "Software Developer — Bali, Indonesia.",
     url: "https://paulosugaro.com",
     siteName: "Paulo Sugaro",
     locale: "en_US",
@@ -43,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Paulo Sugaro",
-    description: "Software That Fits Your Business",
+    description: "Software Developer — Bali, Indonesia.",
   },
   icons: {
     icon: [
@@ -68,9 +65,7 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} ${inter.variable} min-h-full flex flex-col`}
       >
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
