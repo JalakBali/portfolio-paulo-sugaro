@@ -42,7 +42,10 @@ export const projects: Project[] = [
     coverImage: "/images/projects/mahjong-booking-cover.svg",
     tags: ["Booking Online", "Reservasi Meja", "Real-time"],
     featured: true,
-    liveUrl: "https://bookmahjong.paulosugaro.com",
+    // Demo live dinonaktifkan sementara — bookmahjong.paulosugaro.com adalah
+    // sistem produksi asli milik klien (operasional sungguhan), bukan demo
+    // dengan data dummy. Field `liveUrl` sengaja tidak diisi supaya tombol
+    // "Lihat Demo Live" tidak tampil ke calon klien.
 
     overview: {
       label: "STUDI KASUS",
