@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 
 const fadeUp: Variants = {
@@ -39,12 +40,12 @@ export default function CaseStudyCTA({ projectTitle }: CaseStudyCTAProps) {
           </p>
 
           <div className="mt-8 flex justify-center">
-            <a
-              href="mailto:hello@paulosugaro.com"
+            <Link
+              href="/#contact"
               className="inline-block rounded-full bg-[#6BB8D4] px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#5aa6c2]"
             >
               Diskusikan Proyek Anda
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
